@@ -7,13 +7,6 @@
     "text": "This blog is my digital diary of my stories and expirements with language models."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "My Data Stories",
-    "section": "",
-    "text": "A test post\n\n\n\nvisualization\n\ndata stories\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 12, 2026\n\n\nAn LLM User\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "posts/000_test_post/index.html",
     "href": "posts/000_test_post/index.html",
     "title": "A test post",
@@ -26,5 +19,19 @@
     "title": "A test post",
     "section": "Stories from data",
     "text": "Stories from data\n\nLet’s set up some data\n\n\nx = ['A', 'B', 'C']\ny = [1, 5, 3]\n\n\nNow let’s visualize it\n\nplt.bar(x, y)\nplt.show()"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "My Data Stories",
+    "section": "",
+    "text": "A test post\n\n\n\nvisualization\n\ndata stories\n\n\n\nAn example post from a Jupyter notebook\n\n\n\n\n\nJan 12, 2026\n\n\nAn LLM User\n\n\n\n\n\n\n\n\n\n\n\n\nPlanning recipes and groceries\n\n\n\nAI\n\nLearning\n\nEveryday Tasks\n\n\n\nCan AI help eliminate the burden of remembering grocery lists?\n\n\n\n\n\nJan 23, 2025\n\n\nKenadi\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/002_post_title/kenadi_recipe_post.html",
+    "href": "posts/002_post_title/kenadi_recipe_post.html",
+    "title": "Planning recipes and groceries",
+    "section": "",
+    "text": "YES, it can!\nI see all the time on social media that people’s first introduction to AI and LLMs were to complete everyday tasks such as itemized grocery lists or travel plans!"
   }
 ]
