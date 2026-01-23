@@ -1,8 +1,8 @@
 ---
 title: About
-image: profile.jpg
+image: IMG_0415.JPG
 about:
   template: jolla
 ---
 
-About this blog
+This blog is my digital diary of my stories and expirements with language models.
