@@ -5,4 +5,4 @@ about:
   template: jolla
 ---
 
-This blog is my digital diary of my stories and expirements with language models.
+This blog is my digital diary of my stories and expirements with data.
