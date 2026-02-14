@@ -1,0 +1,2511 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>What is the probability that people score higher in agreeableness than extraversion according to the results of Big Five Personality Test by Open Source Psychometrics Project? – Kenadi’s Data Stories</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script><script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-1beee67b6d013596647241ad43e46a29.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="https://cdn.jsdelivr.net/npm/requirejs@2.3.6/require.min.js" integrity="sha384-c9c+LnTbwQ3aujuU7ULEPVvgLs+Fn6fJUvIGTsuu1ZcCf11fiEubah0ttpca4ntM sha384-6V1/AdqZRWk1KAlWbKBlGhN7VG4iE/yAZcO6NZPMF8od0vukrvr0tg4qY6NSrItx" crossorigin="anonymous"></script>
+
+<script type="application/javascript">define('jquery', [],function() {return window.jQuery;})</script>
+
+
+<link rel="stylesheet" href="../../../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">Kenadi’s Data Stories</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../../../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">What is the probability that people score higher in agreeableness than extraversion according to the results of Big Five Personality Test by Open Source Psychometrics Project?</h1>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<p><img src="img/AgreevsExtra.png" width="400/"></p>
+<ul>
+<li>Image icons from verywellmind.com</li>
+</ul>
+<hr>
+<section id="introduction" class="level3">
+<h3 class="anchored" data-anchor-id="introduction"><strong>Introduction</strong></h3>
+<p>This analysis explores whether respondents are more likely to score higher in agreeableness than in extraversion using data from the Big Five Personality test. Comparing these two traits will allow us to dig deeper into how characterics in personality show up in a sample and find patterns that go beyond just looking at individual scores. Additionally, we can compare the global respondants to the results from our COMM 3180 class data to see whether the trends that appear in the wider population are reflected within our own group. Overall, this comparison helps us think about generalizability, whether findings from a large dataset align with a smaller, more specific sample.</p>
+<p>To put it simply, the story that this data tells encourages us to reflect on how our class compares to respondents worldwide.</p>
+<section id="to-be-clear" class="level5">
+<h5 class="anchored" data-anchor-id="to-be-clear">TO BE CLEAR!</h5>
+<p>The analysis being done to answer this questions is looking at the percentiles of the Big 5 personality traits, NOT raw scores.</p>
+<hr>
+</section>
+<section id="preliminary-data-unscored" class="level4">
+<h4 class="anchored" data-anchor-id="preliminary-data-unscored">Preliminary Data: Unscored</h4>
+<hr>
+<div id="8d69f100-29ea-4741-92c3-4f618a04fc2c" class="cell" data-execution_count="308">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> re</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> display</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="a5495996-9a99-4873-a8f3-b825eb518d89" class="cell" data-execution_count="309">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>big5_df <span class="op">=</span> pd.read_csv(<span class="st">'data/openpsych_data.csv'</span>, sep<span class="op">=</span><span class="st">'</span><span class="ch">\t</span><span class="st">'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="c3514e40-4721-4dfe-b9e4-17bf4afbc2f9" class="cell" data-execution_count="310">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>big5_df.columns</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="310">
+<pre><code>Index(['race', 'age', 'engnat', 'gender', 'hand', 'source', 'country', 'E1',
+       'E2', 'E3', 'E4', 'E5', 'E6', 'E7', 'E8', 'E9', 'E10', 'N1', 'N2', 'N3',
+       'N4', 'N5', 'N6', 'N7', 'N8', 'N9', 'N10', 'A1', 'A2', 'A3', 'A4', 'A5',
+       'A6', 'A7', 'A8', 'A9', 'A10', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7',
+       'C8', 'C9', 'C10', 'O1', 'O2', 'O3', 'O4', 'O5', 'O6', 'O7', 'O8', 'O9',
+       'O10'],
+      dtype='str')</code></pre>
+</div>
+</div>
+<div id="a47b9c89-1a99-435d-aee2-3d15791c123a" class="cell" data-execution_count="311">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>big5_country_df <span class="op">=</span> big5_df[<span class="st">'country'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="f58229f9-92aa-4ed1-b66a-eef3ec2388a4" class="cell" data-execution_count="312">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>big5_df[<span class="st">'country'</span>].nunique()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="312">
+<pre><code>158</code></pre>
+</div>
+</div>
+<div id="0a46b58f-bcbd-48b6-8950-3282a8ffad67" class="cell" data-execution_count="313">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>questions <span class="op">=</span> <span class="st">'''</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="st">E1  I am the life of the party.</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="st">E2  I don't talk a lot.</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="st">E3  I feel comfortable around people.</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="st">E4  I keep in the background.</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="st">E5  I start conversations.</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="st">E6  I have little to say.</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="st">E7  I talk to a lot of different people at parties.</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="st">E8  I don't like to draw attention to myself.</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="st">E9  I don't mind being the center of attention.</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="st">E10 I am quiet around strangers.</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="st">N1  I get stressed out easily.</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="st">N2  I am relaxed most of the time.</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="st">N3  I worry about things.</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="st">N4  I seldom feel blue.</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="st">N5  I am easily disturbed.</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="st">N6  I get upset easily.</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="st">N7  I change my mood a lot.</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="st">N8  I have frequent mood swings.</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="st">N9  I get irritated easily.</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="st">N10 I often feel blue.</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="st">A1  I feel little concern for others.</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="st">A2  I am interested in people.</span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="st">A3  I insult people.</span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="st">A4  I sympathize with others' feelings.</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="st">A5  I am not interested in other people's problems.</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a><span class="st">A6  I have a soft heart.</span></span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a><span class="st">A7  I am not really interested in others.</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="st">A8  I take time out for others.</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="st">A9  I feel others' emotions.</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="st">A10 I make people feel at ease.</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="st">C1  I am always prepared.</span></span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="st">C2  I leave my belongings around.</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="st">C3  I pay attention to details.</span></span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a><span class="st">C4  I make a mess of things.</span></span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a><span class="st">C5  I get chores done right away.</span></span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a><span class="st">C6  I often forget to put things back in their proper place.</span></span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="st">C7  I like order.</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a><span class="st">C8  I shirk my duties.</span></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a><span class="st">C9  I follow a schedule.</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a><span class="st">C10 I am exacting in my work.</span></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a><span class="st">O1  I have a rich vocabulary.</span></span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a><span class="st">O2  I have difficulty understanding abstract ideas.</span></span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a><span class="st">O3  I have a vivid imagination.</span></span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a><span class="st">O4  I am not interested in abstract ideas.</span></span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a><span class="st">O5  I have excellent ideas.</span></span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a><span class="st">O6  I do not have a good imagination.</span></span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a><span class="st">O7  I am quick to understand things.</span></span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a><span class="st">O8  I use difficult words.</span></span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a><span class="st">O9  I spend time reflecting on things.</span></span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a><span class="st">O10 I am full of ideas.</span></span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a><span class="st">'''</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="f91fc34e-890d-47fd-a745-999457a9ae71" class="cell" data-execution_count="314">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>big5_questions_df <span class="op">=</span> pd.DataFrame([item.split(<span class="st">'</span><span class="ch">\t</span><span class="st">'</span>) <span class="cf">for</span> item <span class="kw">in</span> questions.splitlines() <span class="cf">if</span> item<span class="op">&gt;</span><span class="st">''</span>])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="6ab43db4-6601-44f5-a67e-c8faab21dd96" class="cell" data-execution_count="315">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>big5_questions_df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="315">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">0</th>
+<th data-quarto-table-cell-role="th">1</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>E1</td>
+<td>I am the life of the party.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>E2</td>
+<td>I don't talk a lot.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>E3</td>
+<td>I feel comfortable around people.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>E4</td>
+<td>I keep in the background.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>E5</td>
+<td>I start conversations.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>E6</td>
+<td>I have little to say.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>E7</td>
+<td>I talk to a lot of different people at parties.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">7</th>
+<td>E8</td>
+<td>I don't like to draw attention to myself.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8</th>
+<td>E9</td>
+<td>I don't mind being the center of attention.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">9</th>
+<td>E10</td>
+<td>I am quiet around strangers.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">10</th>
+<td>N1</td>
+<td>I get stressed out easily.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">11</th>
+<td>N2</td>
+<td>I am relaxed most of the time.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">12</th>
+<td>N3</td>
+<td>I worry about things.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">13</th>
+<td>N4</td>
+<td>I seldom feel blue.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">14</th>
+<td>N5</td>
+<td>I am easily disturbed.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">15</th>
+<td>N6</td>
+<td>I get upset easily.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">16</th>
+<td>N7</td>
+<td>I change my mood a lot.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">17</th>
+<td>N8</td>
+<td>I have frequent mood swings.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">18</th>
+<td>N9</td>
+<td>I get irritated easily.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">19</th>
+<td>N10</td>
+<td>I often feel blue.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">20</th>
+<td>A1</td>
+<td>I feel little concern for others.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">21</th>
+<td>A2</td>
+<td>I am interested in people.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">22</th>
+<td>A3</td>
+<td>I insult people.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">23</th>
+<td>A4</td>
+<td>I sympathize with others' feelings.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">24</th>
+<td>A5</td>
+<td>I am not interested in other people's problems.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">25</th>
+<td>A6</td>
+<td>I have a soft heart.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">26</th>
+<td>A7</td>
+<td>I am not really interested in others.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">27</th>
+<td>A8</td>
+<td>I take time out for others.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">28</th>
+<td>A9</td>
+<td>I feel others' emotions.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">29</th>
+<td>A10</td>
+<td>I make people feel at ease.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">30</th>
+<td>C1</td>
+<td>I am always prepared.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">31</th>
+<td>C2</td>
+<td>I leave my belongings around.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">32</th>
+<td>C3</td>
+<td>I pay attention to details.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">33</th>
+<td>C4</td>
+<td>I make a mess of things.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">34</th>
+<td>C5</td>
+<td>I get chores done right away.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">35</th>
+<td>C6</td>
+<td>I often forget to put things back in their pro...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">36</th>
+<td>C7</td>
+<td>I like order.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">37</th>
+<td>C8</td>
+<td>I shirk my duties.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">38</th>
+<td>C9</td>
+<td>I follow a schedule.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">39</th>
+<td>C10</td>
+<td>I am exacting in my work.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">40</th>
+<td>O1</td>
+<td>I have a rich vocabulary.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">41</th>
+<td>O2</td>
+<td>I have difficulty understanding abstract ideas.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">42</th>
+<td>O3</td>
+<td>I have a vivid imagination.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">43</th>
+<td>O4</td>
+<td>I am not interested in abstract ideas.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">44</th>
+<td>O5</td>
+<td>I have excellent ideas.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">45</th>
+<td>O6</td>
+<td>I do not have a good imagination.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">46</th>
+<td>O7</td>
+<td>I am quick to understand things.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">47</th>
+<td>O8</td>
+<td>I use difficult words.</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">48</th>
+<td>O9</td>
+<td>I spend time reflecting on things.</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">49</th>
+<td>O10</td>
+<td>I am full of ideas.</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<div id="8dcac44b-b855-4cbf-8eb2-6590a91dbc66" class="cell" data-execution_count="316">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>factor_map <span class="op">=</span> { <span class="dv">1</span>: <span class="st">'E'</span>, </span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>               <span class="dv">2</span>: <span class="st">'A'</span>,</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>               <span class="dv">3</span>: <span class="st">'C'</span>,</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>               <span class="dv">4</span>: <span class="st">'N'</span>,</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>               <span class="dv">5</span>: <span class="st">'O'</span> }</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="463b1c18-3d12-4e63-b80b-9298df0c5976" class="cell" data-execution_count="317">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>ipip_df <span class="op">=</span> pd.read_html(<span class="st">'big5_questions.html'</span>, header<span class="op">=</span><span class="dv">0</span>)[<span class="dv">0</span>]</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>ipip_df <span class="op">=</span> ipip_df.rename(columns<span class="op">=</span>{<span class="st">'Unnamed: 1'</span>: <span class="st">'text'</span>, <span class="st">'Unnamed: 7'</span>: <span class="st">'factor_and_direction'</span>})[[<span class="st">'text'</span>,<span class="st">'factor_and_direction'</span>]]</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>ipip_df[[<span class="st">'factor'</span>,<span class="st">'direction'</span>]]<span class="op">=</span>ipip_df[<span class="st">'factor_and_direction'</span>].<span class="bu">str</span>.extract(<span class="vs">r'</span><span class="kw">(</span><span class="pp">[1-5]</span><span class="kw">)(</span><span class="dv">.</span><span class="kw">)</span><span class="vs">'</span>)</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>ipip_df[<span class="st">'category'</span>]<span class="op">=</span>ipip_df[<span class="st">'factor'</span>].astype(<span class="bu">int</span>).<span class="bu">map</span>(factor_map)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="d5360010-e281-4567-9cbb-2d303aeed88e" class="cell" data-execution_count="318">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>ipip_df <span class="op">=</span> ipip_df.assign(number<span class="op">=</span>np.repeat(np.arange(<span class="dv">1</span>,<span class="dv">11</span>),<span class="dv">5</span>))</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>ipip_df <span class="op">=</span> ipip_df.assign(qcode<span class="op">=</span>ipip_df[<span class="st">'category'</span>].<span class="bu">str</span>.cat(ipip_df[<span class="st">'number'</span>].astype(<span class="bu">str</span>)))   </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="3f25abcd-b984-4f84-866d-c923c27b9438" class="cell" data-execution_count="319">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>neg_items <span class="op">=</span> ipip_df.query(<span class="st">'direction=="-"'</span>)[<span class="st">'qcode'</span>]</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>neg_items</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="319">
+<pre><code>1      A1
+3      N1
+5      E2
+7      C2
+9      O2
+11     A3
+13     N3
+15     E4
+17     C4
+19     O4
+21     A5
+23     N5
+25     E6
+27     C6
+28     N6
+29     O6
+31     A7
+33     N7
+35     E8
+37     C8
+38     N8
+43     N9
+45    E10
+48    N10
+Name: qcode, dtype: str</code></pre>
+</div>
+</div>
+<hr>
+</section>
+<section id="preliminary-data-scored" class="level4">
+<h4 class="anchored" data-anchor-id="preliminary-data-scored">Preliminary Data: Scored</h4>
+<hr>
+<div id="fe72c611-d532-46dd-b823-4dead0a6a411" class="cell" data-execution_count="320">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>big5_scored_df <span class="op">=</span> pd.read_csv(<span class="st">'data/openpsych_data_scored.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="e910da11-6aaa-4176-ac97-b35b796282d9" class="cell" data-execution_count="321">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>big5_scored_df.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="321">
+<pre><code>(19719, 69)</code></pre>
+</div>
+</div>
+<div id="8043dc87-418e-47e2-8410-12a3fc84670c" class="cell" data-execution_count="322">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>big5_scored_df.columns</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="322">
+<pre><code>Index(['race', 'age', 'engnat', 'gender', 'hand', 'source', 'country', 'E1',
+       'E2', 'E3', 'E4', 'E5', 'E6', 'E7', 'E8', 'E9', 'E10', 'N1', 'N2', 'N3',
+       'N4', 'N5', 'N6', 'N7', 'N8', 'N9', 'N10', 'A1', 'A2', 'A3', 'A4', 'A5',
+       'A6', 'A7', 'A8', 'A9', 'A10', 'C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7',
+       'C8', 'C9', 'C10', 'O1', 'O2', 'O3', 'O4', 'O5', 'O6', 'O7', 'O8', 'O9',
+       'O10', 'race_cat', 'gender_cat', 'O', 'C', 'E', 'A', 'N', 'E_pct',
+       'A_pct', 'C_pct', 'N_pct', 'O_pct'],
+      dtype='str')</code></pre>
+</div>
+</div>
+<div id="5f801d68-27a8-447a-ba5d-ef3a0fa700fa" class="cell" data-execution_count="323">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>big5_scored_df[[<span class="st">'O'</span>,<span class="st">'C'</span>,<span class="st">'E'</span>,<span class="st">'A'</span>,<span class="st">'N'</span>,<span class="st">'E_pct'</span>,<span class="st">'A_pct'</span>, <span class="st">'C_pct'</span>, <span class="st">'N_pct'</span>, <span class="st">'O_pct'</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="323">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">O</th>
+<th data-quarto-table-cell-role="th">C</th>
+<th data-quarto-table-cell-role="th">E</th>
+<th data-quarto-table-cell-role="th">A</th>
+<th data-quarto-table-cell-role="th">N</th>
+<th data-quarto-table-cell-role="th">E_pct</th>
+<th data-quarto-table-cell-role="th">A_pct</th>
+<th data-quarto-table-cell-role="th">C_pct</th>
+<th data-quarto-table-cell-role="th">N_pct</th>
+<th data-quarto-table-cell-role="th">O_pct</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>43</td>
+<td>47</td>
+<td>44</td>
+<td>46</td>
+<td>49</td>
+<td>93</td>
+<td>85</td>
+<td>97</td>
+<td>99</td>
+<td>70</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>26</td>
+<td>42</td>
+<td>22</td>
+<td>35</td>
+<td>29</td>
+<td>20</td>
+<td>27</td>
+<td>86</td>
+<td>50</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>45</td>
+<td>49</td>
+<td>35</td>
+<td>38</td>
+<td>14</td>
+<td>68</td>
+<td>42</td>
+<td>98</td>
+<td>3</td>
+<td>81</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>41</td>
+<td>26</td>
+<td>22</td>
+<td>37</td>
+<td>17</td>
+<td>20</td>
+<td>37</td>
+<td>16</td>
+<td>8</td>
+<td>58</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>34</td>
+<td>34</td>
+<td>34</td>
+<td>44</td>
+<td>30</td>
+<td>64</td>
+<td>76</td>
+<td>52</td>
+<td>54</td>
+<td>20</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">19714</th>
+<td>35</td>
+<td>36</td>
+<td>21</td>
+<td>42</td>
+<td>19</td>
+<td>18</td>
+<td>65</td>
+<td>62</td>
+<td>13</td>
+<td>25</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">19715</th>
+<td>30</td>
+<td>32</td>
+<td>25</td>
+<td>36</td>
+<td>39</td>
+<td>30</td>
+<td>32</td>
+<td>42</td>
+<td>86</td>
+<td>8</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">19716</th>
+<td>37</td>
+<td>23</td>
+<td>21</td>
+<td>26</td>
+<td>10</td>
+<td>18</td>
+<td>5</td>
+<td>7</td>
+<td>0</td>
+<td>35</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">19717</th>
+<td>42</td>
+<td>43</td>
+<td>21</td>
+<td>38</td>
+<td>20</td>
+<td>18</td>
+<td>42</td>
+<td>89</td>
+<td>16</td>
+<td>64</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">19718</th>
+<td>49</td>
+<td>36</td>
+<td>24</td>
+<td>35</td>
+<td>23</td>
+<td>27</td>
+<td>27</td>
+<td>62</td>
+<td>26</td>
+<td>96</td>
+</tr>
+</tbody>
+</table>
+
+<p>19719 rows × 10 columns</p>
+</div>
+</div>
+</div>
+<div id="7d1443a6-1664-4034-8a61-6dff0bfffe0c" class="cell" data-execution_count="324">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>cat_cols <span class="op">=</span> {</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    cat : [<span class="ss">f'</span><span class="sc">{</span>cat<span class="sc">}{</span>n<span class="op">+</span><span class="dv">1</span><span class="sc">}</span><span class="ss">'</span> <span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">10</span>)] </span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> cat <span class="kw">in</span> (<span class="st">'O'</span>,<span class="st">'C'</span>,<span class="st">'E'</span>,<span class="st">'A'</span>,<span class="st">'N'</span>) </span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>}</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="fa48c828-d720-4b4b-897b-b67f243b13c1" class="cell" data-execution_count="325">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>cat_cols</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="325">
+<pre><code>{'O': ['O1', 'O2', 'O3', 'O4', 'O5', 'O6', 'O7', 'O8', 'O9', 'O10'],
+ 'C': ['C1', 'C2', 'C3', 'C4', 'C5', 'C6', 'C7', 'C8', 'C9', 'C10'],
+ 'E': ['E1', 'E2', 'E3', 'E4', 'E5', 'E6', 'E7', 'E8', 'E9', 'E10'],
+ 'A': ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'A7', 'A8', 'A9', 'A10'],
+ 'N': ['N1', 'N2', 'N3', 'N4', 'N5', 'N6', 'N7', 'N8', 'N9', 'N10']}</code></pre>
+</div>
+</div>
+<div id="0d8fa38d-525d-4b6a-9268-c2ecc6b1e735" class="cell" data-execution_count="326">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> cat, cols <span class="kw">in</span> cat_cols.items():</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    big5_scored_df[cat]<span class="op">=</span>big5_scored_df[cols].<span class="bu">sum</span>(axis<span class="op">=</span><span class="dv">1</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<hr>
+</section>
+</section>
+<section id="analysis" class="level1">
+<h1>Analysis</h1>
+<p><strong>STEPS</strong> 1. Find a random sample of 10 countries 2. Filter the data to only show the sampled countried 3. Calculate the probability that the individuals in the sampled countries are greater in agreeableness than extroversion 4. Visualize the findings</p>
+<div id="e225de1f-2f61-45e3-86c0-6bdea7a40ed4" class="cell" data-execution_count="327">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>unique <span class="op">=</span> big5_df[<span class="st">"country"</span>].drop_duplicates()</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>unique</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="327">
+<pre><code>0        US
+2        PK
+3        RO
+7        IN
+10       IT
+         ..
+16741    ZM
+16914    PY
+16962    UZ
+18180    TC
+19682    KG
+Name: country, Length: 159, dtype: str</code></pre>
+</div>
+</div>
+<ul>
+<li>Here we have all of the abbreviations of countries that are represented by the people who took the survey</li>
+</ul>
+<div id="577eeea4-3095-4a3c-835b-bc380b49ed8e" class="cell" data-execution_count="328">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>country_sample <span class="op">=</span> unique.sample(n<span class="op">=</span><span class="dv">10</span>, random_state<span class="op">=</span><span class="dv">40</span>)</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>country_sample</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="328">
+<pre><code>246      AR
+6254     LS
+10920    GY
+16       FR
+5327     KH
+413      HK
+7419     MP
+620      LK
+228      DE
+1980     ZW
+Name: country, dtype: str</code></pre>
+</div>
+</div>
+<p>Here is the random sample of the 10 countries that will be examined in this analysis. We can look at the data from the survey respondants from these listed countries to see each individuals percentile score in agreeableness and extraversion. This randomization also ensures that the data is diverse because cultural norms may impact/skew how people view their own personaility</p>
+<div id="b3aff20a-ee0f-471f-908e-5e6f3506d132" class="cell" data-execution_count="329">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>big5_sample_df <span class="op">=</span> big5_df[big5_df[<span class="st">'country'</span>].isin(country_sample)]</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>big5_sample_df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="329">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">race</th>
+<th data-quarto-table-cell-role="th">age</th>
+<th data-quarto-table-cell-role="th">engnat</th>
+<th data-quarto-table-cell-role="th">gender</th>
+<th data-quarto-table-cell-role="th">hand</th>
+<th data-quarto-table-cell-role="th">source</th>
+<th data-quarto-table-cell-role="th">country</th>
+<th data-quarto-table-cell-role="th">E1</th>
+<th data-quarto-table-cell-role="th">E2</th>
+<th data-quarto-table-cell-role="th">E3</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">O1</th>
+<th data-quarto-table-cell-role="th">O2</th>
+<th data-quarto-table-cell-role="th">O3</th>
+<th data-quarto-table-cell-role="th">O4</th>
+<th data-quarto-table-cell-role="th">O5</th>
+<th data-quarto-table-cell-role="th">O6</th>
+<th data-quarto-table-cell-role="th">O7</th>
+<th data-quarto-table-cell-role="th">O8</th>
+<th data-quarto-table-cell-role="th">O9</th>
+<th data-quarto-table-cell-role="th">O10</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">16</th>
+<td>13</td>
+<td>19</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>FR</td>
+<td>1</td>
+<td>3</td>
+<td>2</td>
+<td>...</td>
+<td>5</td>
+<td>1</td>
+<td>4</td>
+<td>1</td>
+<td>4</td>
+<td>1</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">228</th>
+<td>1</td>
+<td>39</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>DE</td>
+<td>1</td>
+<td>3</td>
+<td>2</td>
+<td>...</td>
+<td>4</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>4</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">240</th>
+<td>3</td>
+<td>15</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>DE</td>
+<td>1</td>
+<td>3</td>
+<td>1</td>
+<td>...</td>
+<td>3</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>4</td>
+<td>1</td>
+<td>5</td>
+<td>4</td>
+<td>5</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">246</th>
+<td>1</td>
+<td>26</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>AR</td>
+<td>2</td>
+<td>1</td>
+<td>4</td>
+<td>...</td>
+<td>5</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>4</td>
+<td>5</td>
+<td>2</td>
+<td>4</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">387</th>
+<td>3</td>
+<td>28</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>DE</td>
+<td>1</td>
+<td>4</td>
+<td>3</td>
+<td>...</td>
+<td>5</td>
+<td>3</td>
+<td>5</td>
+<td>3</td>
+<td>3</td>
+<td>1</td>
+<td>3</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">19475</th>
+<td>3</td>
+<td>39</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>DE</td>
+<td>3</td>
+<td>1</td>
+<td>4</td>
+<td>...</td>
+<td>5</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">19486</th>
+<td>3</td>
+<td>25</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>5</td>
+<td>FR</td>
+<td>2</td>
+<td>4</td>
+<td>4</td>
+<td>...</td>
+<td>4</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>5</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">19574</th>
+<td>3</td>
+<td>28</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>3</td>
+<td>AR</td>
+<td>2</td>
+<td>5</td>
+<td>3</td>
+<td>...</td>
+<td>5</td>
+<td>2</td>
+<td>5</td>
+<td>1</td>
+<td>3</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+<td>3</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">19593</th>
+<td>3</td>
+<td>18</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>DE</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>...</td>
+<td>5</td>
+<td>1</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+<td>3</td>
+<td>3</td>
+<td>2</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">19673</th>
+<td>1</td>
+<td>16</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>AR</td>
+<td>1</td>
+<td>4</td>
+<td>1</td>
+<td>...</td>
+<td>4</td>
+<td>1</td>
+<td>5</td>
+<td>1</td>
+<td>3</td>
+<td>1</td>
+<td>4</td>
+<td>4</td>
+<td>5</td>
+<td>5</td>
+</tr>
+</tbody>
+</table>
+
+<p>444 rows × 57 columns</p>
+</div>
+</div>
+</div>
+<div id="0563d033-3d31-45c4-b7bf-dbb33948109d" class="cell" data-execution_count="330">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>big5_sample_scored <span class="op">=</span> big5_scored_df[big5_scored_df[<span class="st">'country'</span>].isin(country_sample)]</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>big5_sample_scored</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="330">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">race</th>
+<th data-quarto-table-cell-role="th">age</th>
+<th data-quarto-table-cell-role="th">engnat</th>
+<th data-quarto-table-cell-role="th">gender</th>
+<th data-quarto-table-cell-role="th">hand</th>
+<th data-quarto-table-cell-role="th">source</th>
+<th data-quarto-table-cell-role="th">country</th>
+<th data-quarto-table-cell-role="th">E1</th>
+<th data-quarto-table-cell-role="th">E2</th>
+<th data-quarto-table-cell-role="th">E3</th>
+<th data-quarto-table-cell-role="th">...</th>
+<th data-quarto-table-cell-role="th">O</th>
+<th data-quarto-table-cell-role="th">C</th>
+<th data-quarto-table-cell-role="th">E</th>
+<th data-quarto-table-cell-role="th">A</th>
+<th data-quarto-table-cell-role="th">N</th>
+<th data-quarto-table-cell-role="th">E_pct</th>
+<th data-quarto-table-cell-role="th">A_pct</th>
+<th data-quarto-table-cell-role="th">C_pct</th>
+<th data-quarto-table-cell-role="th">N_pct</th>
+<th data-quarto-table-cell-role="th">O_pct</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">16</th>
+<td>13</td>
+<td>19</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>FR</td>
+<td>1</td>
+<td>3</td>
+<td>2</td>
+<td>...</td>
+<td>47</td>
+<td>36</td>
+<td>20</td>
+<td>17</td>
+<td>33</td>
+<td>15</td>
+<td>0</td>
+<td>62</td>
+<td>66</td>
+<td>90</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">228</th>
+<td>1</td>
+<td>39</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>DE</td>
+<td>1</td>
+<td>3</td>
+<td>2</td>
+<td>...</td>
+<td>34</td>
+<td>28</td>
+<td>19</td>
+<td>39</td>
+<td>24</td>
+<td>13</td>
+<td>48</td>
+<td>23</td>
+<td>30</td>
+<td>20</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">240</th>
+<td>3</td>
+<td>15</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>DE</td>
+<td>1</td>
+<td>3</td>
+<td>1</td>
+<td>...</td>
+<td>45</td>
+<td>24</td>
+<td>20</td>
+<td>34</td>
+<td>15</td>
+<td>15</td>
+<td>23</td>
+<td>10</td>
+<td>5</td>
+<td>81</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">246</th>
+<td>1</td>
+<td>26</td>
+<td>2</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>AR</td>
+<td>2</td>
+<td>5</td>
+<td>4</td>
+<td>...</td>
+<td>45</td>
+<td>46</td>
+<td>38</td>
+<td>35</td>
+<td>27</td>
+<td>77</td>
+<td>27</td>
+<td>95</td>
+<td>42</td>
+<td>81</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">387</th>
+<td>3</td>
+<td>28</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>DE</td>
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>...</td>
+<td>42</td>
+<td>43</td>
+<td>25</td>
+<td>32</td>
+<td>46</td>
+<td>30</td>
+<td>17</td>
+<td>89</td>
+<td>97</td>
+<td>64</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">19475</th>
+<td>3</td>
+<td>39</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>DE</td>
+<td>3</td>
+<td>5</td>
+<td>4</td>
+<td>...</td>
+<td>50</td>
+<td>41</td>
+<td>42</td>
+<td>49</td>
+<td>42</td>
+<td>88</td>
+<td>96</td>
+<td>83</td>
+<td>92</td>
+<td>98</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">19486</th>
+<td>3</td>
+<td>25</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>5</td>
+<td>FR</td>
+<td>2</td>
+<td>2</td>
+<td>4</td>
+<td>...</td>
+<td>48</td>
+<td>35</td>
+<td>21</td>
+<td>42</td>
+<td>34</td>
+<td>18</td>
+<td>65</td>
+<td>57</td>
+<td>70</td>
+<td>93</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">19574</th>
+<td>3</td>
+<td>28</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>3</td>
+<td>AR</td>
+<td>2</td>
+<td>1</td>
+<td>3</td>
+<td>...</td>
+<td>43</td>
+<td>36</td>
+<td>19</td>
+<td>34</td>
+<td>21</td>
+<td>13</td>
+<td>23</td>
+<td>62</td>
+<td>19</td>
+<td>70</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">19593</th>
+<td>3</td>
+<td>18</td>
+<td>2</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>DE</td>
+<td>1</td>
+<td>4</td>
+<td>2</td>
+<td>...</td>
+<td>35</td>
+<td>39</td>
+<td>24</td>
+<td>23</td>
+<td>40</td>
+<td>27</td>
+<td>3</td>
+<td>76</td>
+<td>88</td>
+<td>25</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">19673</th>
+<td>1</td>
+<td>16</td>
+<td>2</td>
+<td>2</td>
+<td>1</td>
+<td>1</td>
+<td>AR</td>
+<td>1</td>
+<td>2</td>
+<td>1</td>
+<td>...</td>
+<td>45</td>
+<td>23</td>
+<td>14</td>
+<td>35</td>
+<td>16</td>
+<td>4</td>
+<td>27</td>
+<td>7</td>
+<td>6</td>
+<td>81</td>
+</tr>
+</tbody>
+</table>
+
+<p>444 rows × 69 columns</p>
+</div>
+</div>
+</div>
+<ul>
+<li>Each row in this dataset represents one respondant who did the Big Five Personality test which include their demographic information and personality results. The columns show the different variables age, gender, and country, along with both raw trait scores (O, C, E, A, N) and percentile rankings.</li>
+<li>Using these rows and columns, we can compare agreeableness and extraversion scores to understand whether people — in our sample and in our class — are more likely to rank higher in one trait than the other.</li>
+</ul>
+<div id="b5bafa6a-13f9-42a8-bd83-8b10358c9639" class="cell" data-execution_count="334">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>A_GT_E_prob <span class="op">=</span> ((big5_sample_scored[<span class="st">'A_pct'</span>] <span class="op">&gt;</span> big5_sample_scored[<span class="st">'E_pct'</span>]).mean())</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'The probability that people in the sample score higher in agreeableness than extraversion is </span><span class="sc">{</span>A_GT_E_prob<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>percent_A_GT_E_prob <span class="op">=</span> ((A_GT_E_prob)<span class="op">*</span><span class="dv">100</span>)</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Which is a </span><span class="sc">{</span>percent_A_GT_E_prob<span class="sc">}</span><span class="ss">%'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The probability that people in the sample score higher in agreeableness than extraversion is 0.43243243243243246
+Which is a 43.24324324324324%</code></pre>
+</div>
+</div>
+<div id="70aa7ca7-0245-4f98-a2d8-d90508b2d251" class="cell" data-execution_count="332">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a>big5_sample_scored[<span class="st">'A_GT_E_prob'</span>] <span class="op">=</span> big5_sample_scored[<span class="st">'A_pct'</span>] <span class="op">&gt;</span> big5_sample_scored[<span class="st">'E_pct'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="98347a58-330b-447f-883d-fd7b95cbcd5b" class="cell" data-execution_count="333">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>big5_sample_scored.groupby(<span class="st">'country'</span>)[<span class="st">'A_GT_E_prob'</span>].mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="333">
+<pre><code>country
+AR    0.487805
+DE    0.429319
+FR    0.348837
+GY    1.000000
+HK    0.512195
+KH    0.333333
+LK    0.548387
+LS    0.500000
+MP    0.500000
+ZW    1.000000
+Name: A_GT_E_prob, dtype: float64</code></pre>
+</div>
+</div>
+<p>Here we find that in the overall sample the probaility that people score higher in agreeablness over extravesion is about 0.432.</p>
+<p>However, the probability results from the individual countries in the sample vary across the regions. For example, some countries such as Hong Kong and Sri Lanka have probabilities that are slightly above 0.5, which suggests that a small majority of respondents in those regions tend to score higher in agreeableness than extraversion. Contrarily, there are countries like France and Germany where the probabilty of scoring high in agreeableness is low. There are also a few countries that show values closer to 1.0, which may reflect smaller sample sizes rather than strong personality differences (which tells us be cauties when interpreting these probabilities). Overall, the variation across countries suggests that personality patterns are different worldwide and reinforces the need to compare the global trends with our class data to understand if our own results are representative of the larger pool.</p>
+<hr>
+<section id="looking-at-the-other-side-probability-that-the-people-in-the-sample-socre-higher-on-extraversion-rather-than-agreeableness" class="level3">
+<h3 class="anchored" data-anchor-id="looking-at-the-other-side-probability-that-the-people-in-the-sample-socre-higher-on-extraversion-rather-than-agreeableness">Looking at the other side (probability that the people in the sample socre higher on extraversion rather than agreeableness)</h3>
+<div id="59bb3e9c-a47d-4f59-9b6b-0f7f8112d4a9" class="cell" data-execution_count="285">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>E_GT_A_prob <span class="op">=</span> ((big5_sample_scored[<span class="st">'E_pct'</span>] <span class="op">&gt;</span> big5_sample_scored[<span class="st">'A_pct'</span>]).mean())</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'The probability that people in the sample score higher in extraversion rather than agreeableness is </span><span class="sc">{</span>E_GT_A_prob<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>percent_E_GT_A_prob <span class="op">=</span> (E_GT_A_prob<span class="op">*</span><span class="dv">100</span>)</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Which is </span><span class="sc">{</span>percent_E_GT_A_prob<span class="sc">}</span><span class="ss">%'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The probability that people in the sample score higher in extraversion rather than agreeableness is 0.5563063063063063
+Which is 55.63063063063063%</code></pre>
+</div>
+</div>
+<div id="2956b498-7fca-48ea-ab47-3e5568bbf2ca" class="cell" data-execution_count="265">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>big5_sample_scored[<span class="st">'E_GT_A_prob'</span>] <span class="op">=</span> big5_sample_scored[<span class="st">'E_pct'</span>] <span class="op">&gt;</span> big5_sample_scored[<span class="st">'A_pct'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="9e14882d-edd1-4c45-85af-f877df9ec2b1" class="cell" data-execution_count="266">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>big5_sample_scored.groupby(<span class="st">'country'</span>)[<span class="st">'E_GT_A_prob'</span>].mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="266">
+<pre><code>country
+AR    0.487805
+DE    0.554974
+FR    0.643411
+GY    0.000000
+HK    0.487805
+KH    0.666667
+LK    0.451613
+LS    0.500000
+MP    0.500000
+ZW    0.000000
+Name: E_GT_A_prob, dtype: float64</code></pre>
+</div>
+</div>
+<div id="ae72f128-cd99-4698-9477-3d63c0519dc0" class="cell" data-execution_count="297">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">'Higher Agreeableness'</span>, <span class="st">'Higher Extraversion'</span>]</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [A_GT_E_prob, E_GT_A_prob]</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>plt.bar(labels, values)</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>plt.bar(labels, values, color<span class="op">=</span>[<span class="st">'mediumvioletred'</span>, <span class="st">'gold'</span>])</span>
+<span id="cb42-8"><a href="#cb42-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Probabilitiy'</span>)</span>
+<span id="cb42-9"><a href="#cb42-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Probability of Higher Scores in Agreeableness vs Extraversion from Sampled Countries'</span>,fontsize<span class="op">=</span><span class="dv">8</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="297">
+<pre><code>Text(0.5, 1.0, 'Probability of Higher Scores in Agreeableness vs Extraversion from Sampled Countries')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DOW2_files/figure-html/cell-31-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Here we find that the probability of scoring in a higher percentile of extraversion over agreeableness is about 0.556.</p>
+<p>The bar chart compares the probability that respondents in the sampled countries score higher in agreeableness versus extraversion. The taller gold bar indicates that a larger proportion of individuals have higher extraversion percentiles than agreeableness percentiles. This means that within this sample, people are, slightly, more likely to be more extroverted than agreeable.</p>
+<p>While the difference is not extremely large it tell us that extraversion may be a more dominant trait in this dataset. In this portion, the visualization helps us see the imbalance between the two probabilities and reveals that higher scores in extraversion occur more frequently than higher socres in agreeableness within the sampled countries.</p>
+<hr>
+</section>
+<section id="comparing-to-class-data" class="level3">
+<h3 class="anchored" data-anchor-id="comparing-to-class-data">Comparing to class data</h3>
+<div id="f33de45b-f69e-48da-84de-1c4cfb87fc33" class="cell" data-execution_count="268">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>big5_class_df <span class="op">=</span> pd.read_csv(<span class="st">'data/class_big5_data.csv'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="8efb001d-74ea-4c04-a53d-bc55aa010c1b" class="cell" data-execution_count="269">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>big5_class_df.columns</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="269">
+<pre><code>Index(['Name', 'first_name', 'I', 'II', 'III', 'IV', 'V'], dtype='str')</code></pre>
+</div>
+</div>
+<div id="2fa0f3bf-4eca-4e0e-a7f0-c93efcfb7284" class="cell" data-execution_count="270">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a>big5_class_df[[<span class="st">'Name'</span>, <span class="st">'first_name'</span>, <span class="st">'I'</span>, <span class="st">'II'</span>, <span class="st">'III'</span>, <span class="st">'IV'</span>, <span class="st">'V'</span>]]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="270">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">first_name</th>
+<th data-quarto-table-cell-role="th">I</th>
+<th data-quarto-table-cell-role="th">II</th>
+<th data-quarto-table-cell-role="th">III</th>
+<th data-quarto-table-cell-role="th">IV</th>
+<th data-quarto-table-cell-role="th">V</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>Ambrosius,Colin James</td>
+<td>Colin</td>
+<td>74.0</td>
+<td>70.0</td>
+<td>80.0</td>
+<td>97.0</td>
+<td>96.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>Amro,Tarek Junayd</td>
+<td>Tarek</td>
+<td>96.0</td>
+<td>22.0</td>
+<td>71.0</td>
+<td>93.0</td>
+<td>59.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>Boltman,Glynn Marie</td>
+<td>Glynn</td>
+<td>92.0</td>
+<td>52.0</td>
+<td>89.0</td>
+<td>89.0</td>
+<td>83.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>Chi,Emilie Hamin</td>
+<td>Emilie</td>
+<td>8.0</td>
+<td>11.0</td>
+<td>91.0</td>
+<td>96.0</td>
+<td>34.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>Crawford,Kenadi Rose</td>
+<td>Kenadi</td>
+<td>96.0</td>
+<td>66.0</td>
+<td>87.0</td>
+<td>76.0</td>
+<td>88.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>Garcia Maldonado,David</td>
+<td>David</td>
+<td>42.0</td>
+<td>22.0</td>
+<td>71.0</td>
+<td>52.0</td>
+<td>34.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>Goldman,Maggie</td>
+<td>Maggie</td>
+<td>90.0</td>
+<td>66.0</td>
+<td>56.0</td>
+<td>52.0</td>
+<td>70.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">7</th>
+<td>Grgecic,Kyle Stephen</td>
+<td>Kyle</td>
+<td>98.0</td>
+<td>87.0</td>
+<td>80.0</td>
+<td>4.0</td>
+<td>95.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8</th>
+<td>Herzog,Fiona Stella</td>
+<td>Fiona</td>
+<td>92.0</td>
+<td>57.0</td>
+<td>67.0</td>
+<td>92.0</td>
+<td>84.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">9</th>
+<td>Hovannisian,Sose Siroon</td>
+<td>Sose</td>
+<td>95.0</td>
+<td>52.0</td>
+<td>83.0</td>
+<td>52.0</td>
+<td>65.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">10</th>
+<td>Jacobs,Jenna Margaret</td>
+<td>Jenna</td>
+<td>41.0</td>
+<td>78.0</td>
+<td>67.0</td>
+<td>92.0</td>
+<td>3.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">11</th>
+<td>Lawson,Nina Lin</td>
+<td>Nina</td>
+<td>81.0</td>
+<td>11.0</td>
+<td>62.0</td>
+<td>76.0</td>
+<td>46.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">12</th>
+<td>Maharaj,Nicholas Krishna</td>
+<td>Nicholas</td>
+<td>57.0</td>
+<td>66.0</td>
+<td>83.0</td>
+<td>46.0</td>
+<td>40.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">13</th>
+<td>Park,Daniel</td>
+<td>Daniel</td>
+<td>7.0</td>
+<td>26.0</td>
+<td>51.0</td>
+<td>87.0</td>
+<td>40.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">14</th>
+<td>Rosen,Alex Justin</td>
+<td>Alex</td>
+<td>54.0</td>
+<td>43.0</td>
+<td>67.0</td>
+<td>76.0</td>
+<td>52.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">15</th>
+<td>Sebhatleab,Noah</td>
+<td>Noah</td>
+<td>78.0</td>
+<td>91.0</td>
+<td>89.0</td>
+<td>76.0</td>
+<td>89.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">16</th>
+<td>Singhal,Arhan</td>
+<td>Arhan</td>
+<td>83.0</td>
+<td>82.0</td>
+<td>11.0</td>
+<td>16.0</td>
+<td>76.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">17</th>
+<td>Wang,Sophia</td>
+<td>Sophia</td>
+<td>74.0</td>
+<td>11.0</td>
+<td>40.0</td>
+<td>9.0</td>
+<td>28.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">18</th>
+<td>Zhang,Wilson</td>
+<td>Wilson</td>
+<td>33.0</td>
+<td>48.0</td>
+<td>10.0</td>
+<td>13.0</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<ul>
+<li>This table gives us a rundown of all of the COMM 3180 students’ results which include their names and percentile scores.</li>
+</ul>
+<div id="3fb8f4a4-2174-47b0-a7ec-2173804dd7a5" class="cell" data-execution_count="271">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>big5_class_df <span class="op">=</span> big5_class_df.rename(columns<span class="op">=</span>{</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>    <span class="st">'I'</span>: <span class="st">'E_class_pct'</span>,</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a>    <span class="st">'II'</span>: <span class="st">'N_class_pct'</span>,</span>
+<span id="cb48-4"><a href="#cb48-4" aria-hidden="true" tabindex="-1"></a>    <span class="st">'III'</span>: <span class="st">'A_class_pct'</span>,</span>
+<span id="cb48-5"><a href="#cb48-5" aria-hidden="true" tabindex="-1"></a>    <span class="st">'IV'</span>: <span class="st">'C_class_pct'</span>,</span>
+<span id="cb48-6"><a href="#cb48-6" aria-hidden="true" tabindex="-1"></a>    <span class="st">'V'</span>: <span class="st">'O_class_pct'</span></span>
+<span id="cb48-7"><a href="#cb48-7" aria-hidden="true" tabindex="-1"></a>})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="81b5cb35-ef47-47a4-a7d4-84ca9fbea621" class="cell" data-execution_count="272">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>big5_class_df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="272">
+<div>
+
+
+<table class="dataframe caption-top table table-sm table-striped small" data-border="1">
+<thead>
+<tr class="header">
+<th data-quarto-table-cell-role="th"></th>
+<th data-quarto-table-cell-role="th">Name</th>
+<th data-quarto-table-cell-role="th">first_name</th>
+<th data-quarto-table-cell-role="th">E_class_pct</th>
+<th data-quarto-table-cell-role="th">N_class_pct</th>
+<th data-quarto-table-cell-role="th">A_class_pct</th>
+<th data-quarto-table-cell-role="th">C_class_pct</th>
+<th data-quarto-table-cell-role="th">O_class_pct</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">0</th>
+<td>Ambrosius,Colin James</td>
+<td>Colin</td>
+<td>74.0</td>
+<td>70.0</td>
+<td>80.0</td>
+<td>97.0</td>
+<td>96.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">1</th>
+<td>Amro,Tarek Junayd</td>
+<td>Tarek</td>
+<td>96.0</td>
+<td>22.0</td>
+<td>71.0</td>
+<td>93.0</td>
+<td>59.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">2</th>
+<td>Boltman,Glynn Marie</td>
+<td>Glynn</td>
+<td>92.0</td>
+<td>52.0</td>
+<td>89.0</td>
+<td>89.0</td>
+<td>83.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">3</th>
+<td>Chi,Emilie Hamin</td>
+<td>Emilie</td>
+<td>8.0</td>
+<td>11.0</td>
+<td>91.0</td>
+<td>96.0</td>
+<td>34.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">4</th>
+<td>Crawford,Kenadi Rose</td>
+<td>Kenadi</td>
+<td>96.0</td>
+<td>66.0</td>
+<td>87.0</td>
+<td>76.0</td>
+<td>88.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">5</th>
+<td>Garcia Maldonado,David</td>
+<td>David</td>
+<td>42.0</td>
+<td>22.0</td>
+<td>71.0</td>
+<td>52.0</td>
+<td>34.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">6</th>
+<td>Goldman,Maggie</td>
+<td>Maggie</td>
+<td>90.0</td>
+<td>66.0</td>
+<td>56.0</td>
+<td>52.0</td>
+<td>70.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">7</th>
+<td>Grgecic,Kyle Stephen</td>
+<td>Kyle</td>
+<td>98.0</td>
+<td>87.0</td>
+<td>80.0</td>
+<td>4.0</td>
+<td>95.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">8</th>
+<td>Herzog,Fiona Stella</td>
+<td>Fiona</td>
+<td>92.0</td>
+<td>57.0</td>
+<td>67.0</td>
+<td>92.0</td>
+<td>84.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">9</th>
+<td>Hovannisian,Sose Siroon</td>
+<td>Sose</td>
+<td>95.0</td>
+<td>52.0</td>
+<td>83.0</td>
+<td>52.0</td>
+<td>65.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">10</th>
+<td>Jacobs,Jenna Margaret</td>
+<td>Jenna</td>
+<td>41.0</td>
+<td>78.0</td>
+<td>67.0</td>
+<td>92.0</td>
+<td>3.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">11</th>
+<td>Lawson,Nina Lin</td>
+<td>Nina</td>
+<td>81.0</td>
+<td>11.0</td>
+<td>62.0</td>
+<td>76.0</td>
+<td>46.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">12</th>
+<td>Maharaj,Nicholas Krishna</td>
+<td>Nicholas</td>
+<td>57.0</td>
+<td>66.0</td>
+<td>83.0</td>
+<td>46.0</td>
+<td>40.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">13</th>
+<td>Park,Daniel</td>
+<td>Daniel</td>
+<td>7.0</td>
+<td>26.0</td>
+<td>51.0</td>
+<td>87.0</td>
+<td>40.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">14</th>
+<td>Rosen,Alex Justin</td>
+<td>Alex</td>
+<td>54.0</td>
+<td>43.0</td>
+<td>67.0</td>
+<td>76.0</td>
+<td>52.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">15</th>
+<td>Sebhatleab,Noah</td>
+<td>Noah</td>
+<td>78.0</td>
+<td>91.0</td>
+<td>89.0</td>
+<td>76.0</td>
+<td>89.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">16</th>
+<td>Singhal,Arhan</td>
+<td>Arhan</td>
+<td>83.0</td>
+<td>82.0</td>
+<td>11.0</td>
+<td>16.0</td>
+<td>76.0</td>
+</tr>
+<tr class="even">
+<th data-quarto-table-cell-role="th">17</th>
+<td>Wang,Sophia</td>
+<td>Sophia</td>
+<td>74.0</td>
+<td>11.0</td>
+<td>40.0</td>
+<td>9.0</td>
+<td>28.0</td>
+</tr>
+<tr class="odd">
+<th data-quarto-table-cell-role="th">18</th>
+<td>Zhang,Wilson</td>
+<td>Wilson</td>
+<td>33.0</td>
+<td>48.0</td>
+<td>10.0</td>
+<td>13.0</td>
+<td>1.0</td>
+</tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+<ul>
+<li>Similarly, this table shows the same data as the first just with renamed columns to match the description of the global data.
+<ul>
+<li>E_class_pct is Extraversion</li>
+<li>N_class_pct is Nueroticism</li>
+<li>A_class_pct is Agreeableness</li>
+<li>C_class_pct is Conscientiousness</li>
+<li>O_class_pct is Openness</li>
+</ul></li>
+</ul>
+<div id="3bc3466b-5679-4847-99e5-308cc8dc5485" class="cell" data-execution_count="298">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>A_GT_E_class_prob <span class="op">=</span> ((big5_class_df[<span class="st">'A_class_pct'</span>] <span class="op">&gt;</span> big5_class_df[<span class="st">'E_class_pct'</span>]).mean())</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'The probability that the COMM 3180 class are more agreeable than extroverted is </span><span class="sc">{</span>A_GT_E_class_prob<span class="sc">}</span><span class="ss">'</span>)</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>percent_A_GT_E_class_prob <span class="op">=</span> ((A_GT_E_class_prob)<span class="op">*</span><span class="dv">100</span>)</span>
+<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f'Which is </span><span class="sc">{</span>percent_A_GT_E_class_prob<span class="sc">}</span><span class="ss">%'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>The probability that the COMM 3180 class are more agreeable than extroverted is 0.42105263157894735
+Which is 42.10526315789473%</code></pre>
+</div>
+</div>
+<div id="a41458e3-857f-4c4d-be3d-42ebb45b429a" class="cell" data-execution_count="299">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>big5_class_df[<span class="st">'A_GT_E_class_prob'</span>] <span class="op">=</span> big5_class_df[<span class="st">'A_class_pct'</span>] <span class="op">&gt;</span> big5_class_df[<span class="st">'E_class_pct'</span>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="95e5ed98-a0b6-4912-8877-e61512e758b6" class="cell" data-execution_count="304">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a>big5_class_df.groupby(<span class="st">'first_name'</span>)[<span class="st">'A_GT_E_class_prob'</span>].mean()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="304">
+<pre><code>first_name
+Alex        1.0
+Arhan       0.0
+Colin       1.0
+Daniel      1.0
+David       1.0
+Emilie      1.0
+Fiona       0.0
+Glynn       0.0
+Jenna       1.0
+Kenadi      0.0
+Kyle        0.0
+Maggie      0.0
+Nicholas    1.0
+Nina        0.0
+Noah        1.0
+Sophia      0.0
+Sose        0.0
+Tarek       0.0
+Wilson      0.0
+Name: A_GT_E_class_prob, dtype: float64</code></pre>
+</div>
+</div>
+<p>This output shows which individual students in the COMM 3180 class have higher agreeableness percentiles than extraversion percentiles. Each 1.0, or True value, is a student who is more agreeable than extroverted, while 0.0, or False value, shows the opposite. Since there are fewer True values in the class data, the results emphasize the earlier finding that the probability of socring higher in extraversion is slightly more common than socring higher in agreeableness.</p>
+<div id="4e05180f-88a8-42a3-b0c6-24b88e41e93e" class="cell" data-execution_count="307">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> [<span class="st">'COMM 3180 Class'</span>, <span class="st">'Sampled Countries'</span>]</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [A_GT_E_class_prob, A_GT_E_prob]</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>plt.bar(labels, values)</span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>plt.bar(labels, values, color<span class="op">=</span>[<span class="st">'purple'</span>, <span class="st">'skyblue'</span>])</span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Probability (A &gt; E)'</span>)</span>
+<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Probability of Higher Scores in Agreeableness compared to Extraversion: Class vs Sampled Countries'</span>,fontsize<span class="op">=</span><span class="dv">8</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="307">
+<pre><code>Text(0.5, 1.0, 'Probability of Higher Scores in Agreeableness compared to Extraversion: Class vs Sampled Countries')</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DOW2_files/figure-html/cell-40-output-2.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>This visualization compares the probability that respondants scored higher in Agreeableness as opposed to Extraversion in the COMM 3180 class and the Sampled Countries. Here we can clearly see that there is little difference in the probabilities which suggests that our class reflects a similar pattern to the larger sample. However, in both groups, there was a greater probability of scoring in higher percentiles of extraversion. This similarity indicates that the trends observed in the global dataset may be somewhat generalizable to our class with the exception of sample size and possibily variation in responses.</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp("https:\/\/KenadiC\.github\.io\/comm3180_S26_Blog\/");
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
