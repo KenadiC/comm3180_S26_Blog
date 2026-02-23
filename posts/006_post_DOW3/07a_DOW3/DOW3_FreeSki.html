@@ -197,8 +197,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Women’s freestyle skiing has become a highly anticipated discipline in the world of Olympic sports and with the ongoing 2026 Winter Olympics we are reminded of the stand-out athletes who are making groundbreaking achievements. And with the presence of so many successful athletes comes the opportunity to look at how individual accomplishments are shaping the competitiveness of free ski.</p>
 <p>A case that we can examine is Eileen Gu who has made significant acheievements and become one of the most decorated athelete’s in her sport. She competes across events of Halfpipe, Slopestyle, and Big Air. Her emergence shines a light on how the dynamics and competiveness of free ski are changing. So what does this mean for other athletes when one is so exceptional? Are medals becoming concentrated among versatile multi-event athletes?</p>
 <p>And to expand: Does the success of multi-event athletes like Eileen Gu reflect a shift within the sport?”</p>
-<p><img src="./img/eileengu.webp" width="400"></p>
-<p>Photo of Eileen Gu by Abbie Parr.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/eileengu.png" class="img-fluid figure-img"></p>
+<figcaption>Photo of Eileen Gu by Abbie Parr.u</figcaption>
+</figure>
+</div>
 <p>https://nypost.com/2026/02/22/sports/eileen-gu-wins-gold-in-womens-freeski-halfpipe-defending-winter-olympics-title/</p>
 </section>
 <section id="winter-olympics-dataset-dow-3" class="level4">
@@ -428,20 +432,25 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p><img src="./img/DonnaW.png" width="400"> Photo of Donna Weinbrecht</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/DonnaW.png" class="img-fluid figure-img"></p>
+<figcaption>Photo of Donna Weinbrecht</figcaption>
+</figure>
+</div>
 <p>While there are many disciplines worth examining, freestyle skiing (free ski) is a relatively more new sport within the Olympic games. Free Ski was introduced to the Olympics in 1992 in Albertville, France with Donna Weinbrecht of team USA winning the first gold medal in Women’s Free Ski Moguls. Now women can compete across Aerials, Moguls, Ski Cross, Halfpipe, Slopestyle, and Big Air. However, only 16 athletes are currently allowed to compete across all Free Ski events limiting the pool of who can become a victor in multiple styles.</p>
 <p>This means that it an even bigger accomplishment to win medals across events as only a few earn that oppurtunity.</p>
-<div id="c1bc1f62-8221-4a9e-b3be-85af95b85847" class="cell" data-execution_count="7">
+<div id="c1bc1f62-8221-4a9e-b3be-85af95b85847" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>wolympics_df.columns</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="7">
+<div class="cell-output cell-output-display" data-execution_count="20">
 <pre><code>Index(['year', 'type', 'discipline', 'event', 'as', 'athlete_id', 'noc',
        'team', 'place', 'tied', 'medal'],
       dtype='str')</code></pre>
 </div>
 </div>
-<div id="7c9767ed-d3cf-46f2-bf80-9c43bafed446" class="cell" data-execution_count="8">
+<div id="7c9767ed-d3cf-46f2-bf80-9c43bafed446" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>wolympics_df.value_counts(<span class="st">'year'</span>).to_frame().sort_values(<span class="st">'year'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="8">
+<div class="cell-output cell-output-display" data-execution_count="21">
 <div>
 
 
@@ -572,9 +581,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>This data ranges from 1924, the year of the first Winter Olympics, to 2022 which took place in Beijing, China.</p>
-<div id="512033be-e0de-4432-a568-1c43b222dc08" class="cell" data-execution_count="9">
+<div id="512033be-e0de-4432-a568-1c43b222dc08" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>wolympics_df[<span class="st">'discipline'</span>].drop_duplicates</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="9">
+<div class="cell-output cell-output-display" data-execution_count="22">
 <pre><code>&lt;bound method Series.drop_duplicates of 0         Bobsleigh (Bobsleigh)
 1             Winter Pentathlon
 2         Bobsleigh (Bobsleigh)
@@ -589,16 +598,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 Name: discipline, Length: 64509, dtype: str&gt;</code></pre>
 </div>
 </div>
-<div id="570a1fbb-c5be-483b-baa5-adf5bb4746ca" class="cell" data-execution_count="10">
+<div id="570a1fbb-c5be-483b-baa5-adf5bb4746ca" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>freeski_women <span class="op">=</span> wolympics_df[</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    (wolympics_df[<span class="st">'discipline'</span>].<span class="bu">str</span>.contains(<span class="st">'Freestyle Skiing'</span>, na<span class="op">=</span><span class="va">False</span>)) <span class="op">&amp;</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    (wolympics_df[<span class="st">'event'</span>].<span class="bu">str</span>.contains(<span class="st">'Women'</span>, na<span class="op">=</span><span class="va">False</span>))</span>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="4c05f0ab-a9c7-4622-9fa5-106d91ba85a1" class="cell" data-execution_count="11">
+<div id="4c05f0ab-a9c7-4622-9fa5-106d91ba85a1" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>freeski_women <span class="op">=</span> freeski_women[freeski_women[<span class="st">'medal'</span>].notna()]</span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>freeski_women.sort_values(<span class="st">'year'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="11">
+<div class="cell-output cell-output-display" data-execution_count="24">
 <div>
 
 
@@ -783,7 +792,12 @@ Name: discipline, Length: 64509, dtype: str&gt;</code></pre>
 </div>
 <p>We can see all of the results of the Free Ski event from went it was first introduced up until 2022 where Eileen Gu made her Olympic debut, winning gold for China. She intially launched a lot of controversy over her decision to compete for China due to her Chinese-American background and residence in the U.S.</p>
 <p>Still, even in the face of online backlash, Gu stuck with her choice in representing her Mother’s native country and has now won 6 medals for China.</p>
-<p><img src="./img/eileen-gu-2.webp" width="400"> Photo by Getty Images</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="./img/eileen-gu-2.png" class="img-fluid figure-img"></p>
+<figcaption>Photo by Getty Images</figcaption>
+</figure>
+</div>
 <p>https://www.nytimes.com/athletic/7049798/2026/02/17/eileen-gu-winter-olympics-freestyle-skiing-china-controversy/</p>
 <div id="3ce8a497-d4dc-4d84-be76-cdbbf0d78a0b" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>freeski_athletes <span class="op">=</span> freeski_women[<span class="st">'as'</span>].drop_duplicates().tolist()</span>
