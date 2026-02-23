@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Kenadi">
+<meta name="dcterms.date" content="2026-02-22">
 
-<title>Do athletes who compete across multiple event styles really win more Olympic medals?: Women’s freestyle skiing – Kenadi’s Data Stories</title>
+<title>Exploring Winter Olympics Data: Women’s Free Ski – Kenadi's Data Stories</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -148,14 +150,30 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Do athletes who compete across multiple event styles really win more Olympic medals?: Women’s freestyle skiing</h1>
-                      </div>
+      <h1 class="title">Exploring Winter Olympics Data: Women’s Free Ski</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">DOW</div>
+                <div class="quarto-category">Winter Olympics</div>
+              </div>
+                  </div>
   </div>
     
   
   <div class="quarto-title-meta">
 
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Kenadi </p>
+            </div>
+    </div>
       
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">February 22, 2026</p>
+      </div>
+    </div>
     
       
     </div>
@@ -172,16 +190,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
+<section id="do-athletes-who-compete-across-multiple-event-styles-really-win-more-olympic-medals-womens-freestyle-skiing" class="level2">
+<h2 class="anchored" data-anchor-id="do-athletes-who-compete-across-multiple-event-styles-really-win-more-olympic-medals-womens-freestyle-skiing">Do athletes who compete across multiple event styles really win more Olympic medals?: Women’s freestyle skiing</h2>
 <section id="introduction" class="level4">
 <h4 class="anchored" data-anchor-id="introduction">Introduction</h4>
 <p>Women’s freestyle skiing has become a highly anticipated discipline in the world of Olympic sports and with the ongoing 2026 Winter Olympics we are reminded of the stand-out athletes who are making groundbreaking achievements. And with the presence of so many successful athletes comes the opportunity to look at how individual accomplishments are shaping the competitiveness of free ski.</p>
 <p>A case that we can examine is Eileen Gu who has made significant acheievements and become one of the most decorated athelete’s in her sport. She competes across events of Halfpipe, Slopestyle, and Big Air. Her emergence shines a light on how the dynamics and competiveness of free ski are changing. So what does this mean for other athletes when one is so exceptional? Are medals becoming concentrated among versatile multi-event athletes?</p>
 <p>And to expand: Does the success of multi-event athletes like Eileen Gu reflect a shift within the sport?”</p>
 <p><img src="img/eileengu.webp" width="400/"></p>
-<section id="photo-of-eileen-gu-by-abbie-parr." class="level6">
-<h6 class="anchored" data-anchor-id="photo-of-eileen-gu-by-abbie-parr.">Photo of Eileen Gu by Abbie Parr.</h6>
+<p>Photo of Eileen Gu by Abbie Parr.</p>
 <p>https://nypost.com/2026/02/22/sports/eileen-gu-wins-gold-in-womens-freeski-halfpipe-defending-winter-olympics-title/</p>
-</section>
 </section>
 <section id="winter-olympics-dataset-dow-3" class="level4">
 <h4 class="anchored" data-anchor-id="winter-olympics-dataset-dow-3">Winter Olympics Dataset (DOW #3)</h4>
@@ -404,7 +422,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p><img src="img/DonnaW.png" width="400/"></p>
+<p><img src="img/DonnaW.png" width="400/"> Photo of Donna Weinbrecht</p>
 <p>While there are many disciplines worth examining, freestyle skiing (free ski) is a relatively more new sport within the Olympic games. Free Ski was introduced to the Olympics in 1992 in Albertville, France with Donna Weinbrecht of team USA winning the first gold medal in Women’s Free Ski Moguls. Now women can compete across Aerials, Moguls, Ski Cross, Halfpipe, Slopestyle, and Big Air. However, only 16 athletes are currently allowed to compete across all Free Ski events limiting the pool of who can become a victor in multiple styles.</p>
 <p>This means that it an even bigger accomplishment to win medals across events as only a few earn that oppurtunity.</p>
 <div id="c1bc1f62-8221-4a9e-b3be-85af95b85847" class="cell" data-execution_count="19">
@@ -760,6 +778,7 @@ Name: discipline, Length: 64509, dtype: str&gt;</code></pre>
 <p>We can see all of the results of the Free Ski event from went it was first introduced up until 2022 where Eileen Gu made her Olympic debut, winning gold for China. She intially launched a lot of controversy over her decision to compete for China due to her Chinese-American background and residence in the U.S.</p>
 <p>Still, even in the face of online backlash, Gu stuck with her choice in representing her Mother’s native country and has now won 6 medals for China.</p>
 <p><img src="img/eileen-gu-2.webp" width="400/"></p>
+<p>Photo by Getty Images</p>
 <p>https://www.nytimes.com/athletic/7049798/2026/02/17/eileen-gu-winter-olympics-freestyle-skiing-china-controversy/</p>
 <div id="3ce8a497-d4dc-4d84-be76-cdbbf0d78a0b" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>freeski_athletes <span class="op">=</span> freeski_women[<span class="st">'as'</span>].drop_duplicates().tolist()</span>
@@ -1156,6 +1175,7 @@ Name: medal_total, dtype: float64</code></pre>
 <p>From examining Women’s Free Ski and looking to Eileen Gu to help explain the shift in medals won, we can determine that athletes who compete in different event styles do end up with more medals than those who stick to just competing in one event style. It will be interesting and telling to witness how the 16 person rule holds up with break out stars like Eileen Gu and if the Olympics will open up the slopes for more competitors to rise against her.</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
