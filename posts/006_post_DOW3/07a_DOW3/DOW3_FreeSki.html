@@ -197,7 +197,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Women’s freestyle skiing has become a highly anticipated discipline in the world of Olympic sports and with the ongoing 2026 Winter Olympics we are reminded of the stand-out athletes who are making groundbreaking achievements. And with the presence of so many successful athletes comes the opportunity to look at how individual accomplishments are shaping the competitiveness of free ski.</p>
 <p>A case that we can examine is Eileen Gu who has made significant acheievements and become one of the most decorated athelete’s in her sport. She competes across events of Halfpipe, Slopestyle, and Big Air. Her emergence shines a light on how the dynamics and competiveness of free ski are changing. So what does this mean for other athletes when one is so exceptional? Are medals becoming concentrated among versatile multi-event athletes?</p>
 <p>And to expand: Does the success of multi-event athletes like Eileen Gu reflect a shift within the sport?”</p>
-<p><img src="img/eileengu.webp" width="400/"></p>
+<p><img src="./img/eileengu.webp" width="400"></p>
 <p>Photo of Eileen Gu by Abbie Parr.</p>
 <p>https://nypost.com/2026/02/22/sports/eileen-gu-wins-gold-in-womens-freeski-halfpipe-defending-winter-olympics-title/</p>
 </section>
@@ -227,7 +227,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="setup" class="level3">
 <h3 class="anchored" data-anchor-id="setup">Setup</h3>
-<div id="b82bad2c-2c30-4511-85be-81bf65194b94" class="cell" data-execution_count="16">
+<div id="b82bad2c-2c30-4511-85be-81bf65194b94" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> geopandas <span class="im">as</span> gpd</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -236,10 +236,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="load-data" class="level3">
 <h3 class="anchored" data-anchor-id="load-data">Load data</h3>
-<p>wolympics_df = pd.read_csv(‘data/winter_olympics_medals.csv’) wolympics_df.shape</p>
-<div id="043fddc8-de6b-4d64-96c0-f0b928158fa7" class="cell" data-execution_count="18">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>wolympics_df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="18">
+<div id="f821addd-968e-4001-b75c-d30bec22fe1b" class="cell" data-execution_count="5">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>wolympics_df <span class="op">=</span> pd.read_csv(<span class="st">'data/winter_olympics_medals.csv'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>wolympics_df.shape</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="5">
+<pre><code>(64509, 11)</code></pre>
+</div>
+</div>
+<div id="043fddc8-de6b-4d64-96c0-f0b928158fa7" class="cell" data-execution_count="6">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>wolympics_df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="6">
 <div>
 
 
@@ -422,20 +428,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<p><img src="img/DonnaW.png" width="400/"> Photo of Donna Weinbrecht</p>
+<p><img src="./img/DonnaW.png" width="400"> Photo of Donna Weinbrecht</p>
 <p>While there are many disciplines worth examining, freestyle skiing (free ski) is a relatively more new sport within the Olympic games. Free Ski was introduced to the Olympics in 1992 in Albertville, France with Donna Weinbrecht of team USA winning the first gold medal in Women’s Free Ski Moguls. Now women can compete across Aerials, Moguls, Ski Cross, Halfpipe, Slopestyle, and Big Air. However, only 16 athletes are currently allowed to compete across all Free Ski events limiting the pool of who can become a victor in multiple styles.</p>
 <p>This means that it an even bigger accomplishment to win medals across events as only a few earn that oppurtunity.</p>
-<div id="c1bc1f62-8221-4a9e-b3be-85af95b85847" class="cell" data-execution_count="19">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>wolympics_df.columns</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="19">
+<div id="c1bc1f62-8221-4a9e-b3be-85af95b85847" class="cell" data-execution_count="7">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>wolympics_df.columns</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="7">
 <pre><code>Index(['year', 'type', 'discipline', 'event', 'as', 'athlete_id', 'noc',
        'team', 'place', 'tied', 'medal'],
       dtype='str')</code></pre>
 </div>
 </div>
-<div id="7c9767ed-d3cf-46f2-bf80-9c43bafed446" class="cell" data-execution_count="20">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>wolympics_df.value_counts(<span class="st">'year'</span>).to_frame().sort_values(<span class="st">'year'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="20">
+<div id="7c9767ed-d3cf-46f2-bf80-9c43bafed446" class="cell" data-execution_count="8">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>wolympics_df.value_counts(<span class="st">'year'</span>).to_frame().sort_values(<span class="st">'year'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="8">
 <div>
 
 
@@ -566,9 +572,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p>This data ranges from 1924, the year of the first Winter Olympics, to 2022 which took place in Beijing, China.</p>
-<div id="512033be-e0de-4432-a568-1c43b222dc08" class="cell" data-execution_count="21">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>wolympics_df[<span class="st">'discipline'</span>].drop_duplicates</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="21">
+<div id="512033be-e0de-4432-a568-1c43b222dc08" class="cell" data-execution_count="9">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>wolympics_df[<span class="st">'discipline'</span>].drop_duplicates</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="9">
 <pre><code>&lt;bound method Series.drop_duplicates of 0         Bobsleigh (Bobsleigh)
 1             Winter Pentathlon
 2         Bobsleigh (Bobsleigh)
@@ -583,16 +589,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 Name: discipline, Length: 64509, dtype: str&gt;</code></pre>
 </div>
 </div>
-<div id="570a1fbb-c5be-483b-baa5-adf5bb4746ca" class="cell" data-execution_count="22">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>freeski_women <span class="op">=</span> wolympics_df[</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    (wolympics_df[<span class="st">'discipline'</span>].<span class="bu">str</span>.contains(<span class="st">'Freestyle Skiing'</span>, na<span class="op">=</span><span class="va">False</span>)) <span class="op">&amp;</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    (wolympics_df[<span class="st">'event'</span>].<span class="bu">str</span>.contains(<span class="st">'Women'</span>, na<span class="op">=</span><span class="va">False</span>))</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div id="570a1fbb-c5be-483b-baa5-adf5bb4746ca" class="cell" data-execution_count="10">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>freeski_women <span class="op">=</span> wolympics_df[</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    (wolympics_df[<span class="st">'discipline'</span>].<span class="bu">str</span>.contains(<span class="st">'Freestyle Skiing'</span>, na<span class="op">=</span><span class="va">False</span>)) <span class="op">&amp;</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>    (wolympics_df[<span class="st">'event'</span>].<span class="bu">str</span>.contains(<span class="st">'Women'</span>, na<span class="op">=</span><span class="va">False</span>))</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="4c05f0ab-a9c7-4622-9fa5-106d91ba85a1" class="cell" data-execution_count="24">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>freeski_women <span class="op">=</span> freeski_women[freeski_women[<span class="st">'medal'</span>].notna()]</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>freeski_women.sort_values(<span class="st">'year'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="24">
+<div id="4c05f0ab-a9c7-4622-9fa5-106d91ba85a1" class="cell" data-execution_count="11">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>freeski_women <span class="op">=</span> freeski_women[freeski_women[<span class="st">'medal'</span>].notna()]</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>freeski_women.sort_values(<span class="st">'year'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="11">
 <div>
 
 
@@ -777,13 +783,12 @@ Name: discipline, Length: 64509, dtype: str&gt;</code></pre>
 </div>
 <p>We can see all of the results of the Free Ski event from went it was first introduced up until 2022 where Eileen Gu made her Olympic debut, winning gold for China. She intially launched a lot of controversy over her decision to compete for China due to her Chinese-American background and residence in the U.S.</p>
 <p>Still, even in the face of online backlash, Gu stuck with her choice in representing her Mother’s native country and has now won 6 medals for China.</p>
-<p><img src="img/eileen-gu-2.webp" width="400/"></p>
-<p>Photo by Getty Images</p>
+<p><img src="./img/eileen-gu-2.webp" width="400"> Photo by Getty Images</p>
 <p>https://www.nytimes.com/athletic/7049798/2026/02/17/eileen-gu-winter-olympics-freestyle-skiing-china-controversy/</p>
-<div id="3ce8a497-d4dc-4d84-be76-cdbbf0d78a0b" class="cell" data-execution_count="33">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>freeski_athletes <span class="op">=</span> freeski_women[<span class="st">'as'</span>].drop_duplicates().tolist()</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>freeski_athletes</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="33">
+<div id="3ce8a497-d4dc-4d84-be76-cdbbf0d78a0b" class="cell" data-execution_count="12">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>freeski_athletes <span class="op">=</span> freeski_women[<span class="st">'as'</span>].drop_duplicates().tolist()</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>freeski_athletes</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="12">
 <pre><code>['Colette Brand',
  'Stine Lise Hattestad',
  'Yelizaveta Kozhevnikova',
@@ -847,10 +852,10 @@ Name: discipline, Length: 64509, dtype: str&gt;</code></pre>
  'Anastasiya Smirnova']</code></pre>
 </div>
 </div>
-<div id="aff0b411-23d9-496d-8d25-e6bce0529fd5" class="cell" data-execution_count="34">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>medal_counts <span class="op">=</span> freeski_women[<span class="st">'as'</span>].value_counts().reset_index(name<span class="op">=</span><span class="st">'medal_total'</span>)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>medal_counts</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="34">
+<div id="aff0b411-23d9-496d-8d25-e6bce0529fd5" class="cell" data-execution_count="13">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>medal_counts <span class="op">=</span> freeski_women[<span class="st">'as'</span>].value_counts().reset_index(name<span class="op">=</span><span class="st">'medal_total'</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>medal_counts</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="13">
 <div>
 
 
@@ -925,11 +930,11 @@ Name: discipline, Length: 64509, dtype: str&gt;</code></pre>
 </div>
 </div>
 </div>
-<div id="55910899-2c99-4521-9163-65ddc78ca0ed" class="cell" data-execution_count="37">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>versatility <span class="op">=</span> (freeski_women.groupby([<span class="st">'year'</span>,<span class="st">'as'</span>])[<span class="st">'event'</span>].nunique().reset_index(name<span class="op">=</span><span class="st">'event_styles'</span>))</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>versatility.sort_values(<span class="st">'event_styles'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="37">
+<div id="55910899-2c99-4521-9163-65ddc78ca0ed" class="cell" data-execution_count="14">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>versatility <span class="op">=</span> (freeski_women.groupby([<span class="st">'year'</span>,<span class="st">'as'</span>])[<span class="st">'event'</span>].nunique().reset_index(name<span class="op">=</span><span class="st">'event_styles'</span>))</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>versatility.sort_values(<span class="st">'event_styles'</span>, ascending<span class="op">=</span><span class="va">False</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="14">
 <div>
 
 
@@ -1017,12 +1022,12 @@ Name: discipline, Length: 64509, dtype: str&gt;</code></pre>
 </div>
 </div>
 <p>As represented here, and As of the year 2022, Gu had comepeted in 3 different types of events which is more than all atheletes under the Winter Olympics Free Ski data.</p>
-<div id="5cd53884-36ab-4461-976a-28d903e2510a" class="cell" data-execution_count="38">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>events_and_medals <span class="op">=</span> (freeski_women.groupby(<span class="st">'as'</span>)[<span class="st">'event'</span>].nunique().reset_index(name<span class="op">=</span><span class="st">'event_styles'</span>))</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>events_and_medals <span class="op">=</span> medal_counts.merge(events_and_medals, on<span class="op">=</span><span class="st">'as'</span>)</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>events_and_medals</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="38">
+<div id="5cd53884-36ab-4461-976a-28d903e2510a" class="cell" data-execution_count="15">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>events_and_medals <span class="op">=</span> (freeski_women.groupby(<span class="st">'as'</span>)[<span class="st">'event'</span>].nunique().reset_index(name<span class="op">=</span><span class="st">'event_styles'</span>))</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>events_and_medals <span class="op">=</span> medal_counts.merge(events_and_medals, on<span class="op">=</span><span class="st">'as'</span>)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>events_and_medals</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="15">
 <div>
 
 
@@ -1109,10 +1114,10 @@ Name: discipline, Length: 64509, dtype: str&gt;</code></pre>
 </div>
 </div>
 </div>
-<div id="0f1eae03-9e71-44d3-9831-d1846b8f43cd" class="cell" data-execution_count="40">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>avg_medals <span class="op">=</span> events_and_medals.groupby(<span class="st">'event_styles'</span>)[<span class="st">'medal_total'</span>].mean()</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>avg_medals</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="40">
+<div id="0f1eae03-9e71-44d3-9831-d1846b8f43cd" class="cell" data-execution_count="16">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>avg_medals <span class="op">=</span> events_and_medals.groupby(<span class="st">'event_styles'</span>)[<span class="st">'medal_total'</span>].mean()</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>avg_medals</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display" data-execution_count="16">
 <pre><code>event_styles
 1    1.322034
 2    3.000000
@@ -1122,48 +1127,48 @@ Name: medal_total, dtype: float64</code></pre>
 </div>
 <p>Here it is shown that on average those who compete in more event styles end up winning more medals with those entered in 2 and 3 events average around 3 medals and those in one event averaging a little over 1.</p>
 <p>(However, it makes sense that those who only competed in one event average one medal because we are only looking at athletes who have competed and won wether bronze, silver, or gold and most only ever see one event)</p>
-<div id="baabfff1-5e90-470e-9e56-c58023716779" class="cell" data-execution_count="158">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> avg_medals.index.astype(<span class="bu">str</span>)   </span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> avg_medals.values             </span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>plt.bar(labels, values, color<span class="op">=</span>[<span class="st">'orangered'</span>,<span class="st">'gold'</span>,<span class="st">'skyblue'</span>])</span>
-<span id="cb17-7"><a href="#cb17-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-8"><a href="#cb17-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Number of Freestyle Events'</span>)</span>
-<span id="cb17-9"><a href="#cb17-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Average Medal Count'</span>)</span>
-<span id="cb17-10"><a href="#cb17-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Average Medal Count by Number of Freestyle Events'</span>)</span>
-<span id="cb17-11"><a href="#cb17-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-12"><a href="#cb17-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="DOW3_FreeSki_files/figure-html/cell-14-output-1.png" class="img-fluid figure-img"></p>
-</figure>
-</div>
-</div>
-</div>
-<p>While it’s insightful to see if the number of events and athlete competes in allows for more medals, we can also ask what events win the most medals overall?</p>
-<div id="840a0303-9710-4b94-a47f-e6ec32f4881d" class="cell" data-execution_count="42">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>event_counts <span class="op">=</span> freeski_women[<span class="st">'event'</span>].value_counts()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div id="e08d6c4b-d779-4676-b676-7dc200e2bfda" class="cell" data-execution_count="43">
+<div id="baabfff1-5e90-470e-9e56-c58023716779" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> event_counts.index</span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> event_counts.values</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> avg_medals.index.astype(<span class="bu">str</span>)   </span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> avg_medals.values             </span>
 <span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>plt.barh(labels, values)</span>
-<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Total Medals'</span>)</span>
-<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Event Type'</span>)</span>
-<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Total Medals by Women’s Freestyle Skiing Event'</span>)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>plt.bar(labels, values, color<span class="op">=</span>[<span class="st">'orangered'</span>,<span class="st">'gold'</span>,<span class="st">'skyblue'</span>])</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Number of Freestyle Events'</span>)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Average Medal Count'</span>)</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Average Medal Count by Number of Freestyle Events'</span>)</span>
 <span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="DOW3_FreeSki_files/figure-html/cell-16-output-1.png" class="img-fluid figure-img"></p>
+<p><img src="DOW3_FreeSki_files/figure-html/cell-15-output-1.png" class="img-fluid figure-img"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>While it’s insightful to see if the number of events and athlete competes in allows for more medals, we can also ask what events win the most medals overall?</p>
+<div id="840a0303-9710-4b94-a47f-e6ec32f4881d" class="cell" data-execution_count="18">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>event_counts <span class="op">=</span> freeski_women[<span class="st">'event'</span>].value_counts()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="e08d6c4b-d779-4676-b676-7dc200e2bfda" class="cell" data-execution_count="19">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> event_counts.index</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> event_counts.values</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>plt.barh(labels, values)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Total Medals'</span>)</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Event Type'</span>)</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Total Medals by Women’s Freestyle Skiing Event'</span>)</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="DOW3_FreeSki_files/figure-html/cell-17-output-1.png" class="img-fluid figure-img"></p>
 </figure>
 </div>
 </div>
