@@ -10,7 +10,7 @@ website:
         href: https://github.com/
 format:
   html:
-    theme: solar
+    theme: united
     css: styles.css
 
 execute:
