@@ -192,46 +192,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<section id="white-christmas-predictions-and-philadelphia-weather" class="level1">
-<h1>White Christmas Predictions and Philadelphia Weather</h1>
+<section id="if-christmas-isnt-snowy-what-about-boxing-day" class="level1">
+<h1>If Christmas Isn’t Snowy, What About Boxing Day?</h1>
 <p><img src="Whitechristmas.png" width="500/"></p>
-<ol type="1">
-<li>How often has snow occurred versus not occurred on Christmas Day from 2005 to 2025?</li>
-<li>What is the probability of a White Christmas (snowfall on December 25), based on historical weather data (2005-2025)?</li>
-</ol>
+<section id="introduction" class="level2">
+<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<p>Everyone imagines Christmas snow, but does it actually happen?</p>
+<p>A white Christmas is one of the most recognizable holiday traditions in movies, music, and pop culture. But in reality, Philadelphia may not be as snowy on Christmas Day as people expect. Using historical weather data from 2005 to 2025, we can explore how often snow actually occurred on Christmas Day in Philadelphia and whether the odds of a “White Christmas” during the holiday season is within reach.</p>
+<p>To investigate this, I asked two main questions: 1. How often has snow occurred versus not occurred on Christmas Day from 2005 to 2025? 2. What is the probability of a White Christmas (snowfall on December 25), based on historical weather data (2005-2025)?</p>
 <p><strong>STEPS</strong> 1. Filter rows by <code>day</code> column to only show December 25th 2. Filter the rows to find the years that had <code>snow</code> 3. Calculate the difference between days that had no snow versus the days that had snow to find how often snowfall occured 4. Calculate the probability of snowfall occuring on December 25th</p>
 <section id="setup" class="level3">
 <h3 class="anchored" data-anchor-id="setup">Setup</h3>
-<div id="ca3db066-9b00-4534-a4c5-ce8c907c6105" class="cell" data-execution_count="48">
+<div id="ca3db066-9b00-4534-a4c5-ce8c907c6105" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
-<section id="load-the-dataset" class="level3">
-<h3 class="anchored" data-anchor-id="load-the-dataset">Load the dataset</h3>
-<div id="d0e9a066-5c0f-449f-8fd5-bddef5402f90" class="cell" data-execution_count="49">
+<section id="loading-the-dataset" class="level3">
+<h3 class="anchored" data-anchor-id="loading-the-dataset">Loading the dataset</h3>
+<div id="d0e9a066-5c0f-449f-8fd5-bddef5402f90" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>weather_df <span class="op">=</span> pd.read_csv(<span class="st">'data/philadelphia_weather_2005_to_2025.csv'</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>weather_df <span class="op">=</span> weather_df.assign(date<span class="op">=</span>pd.to_datetime(weather_df[<span class="st">'date'</span>]))</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<section id="inspect-the-data" class="level4">
-<h4 class="anchored" data-anchor-id="inspect-the-data">Inspect the data</h4>
-<ul>
-<li>We have looked at these data in a couple of previous notebooks</li>
-<li>Remind yourself of the columns</li>
-<li>Here the data goes from 2005 to 2025</li>
-</ul>
-<div id="3b758f17-c0d2-467d-9312-9f450389ed77" class="cell" data-execution_count="50">
+<div id="3b758f17-c0d2-467d-9312-9f450389ed77" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>weather_df.columns</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="50">
+<div class="cell-output cell-output-display" data-execution_count="4">
 <pre><code>Index(['day', 'year', 'high', 'low', 'rain', 'snow', 'date', 'day_num',
        'month_num', 'dow', 'dow_name', 'month'],
       dtype='str')</code></pre>
 </div>
 </div>
-<div id="6e77eecc-8709-46f4-85bb-0d8f0942bc63" class="cell" data-execution_count="51">
+<div id="6e77eecc-8709-46f4-85bb-0d8f0942bc63" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>weather_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="51">
+<div class="cell-output cell-output-display" data-execution_count="5">
 <div>
 
 
@@ -335,9 +329,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </div>
-<div id="7242ffef-6cac-4e22-a542-bc2589eba431" class="cell" data-execution_count="52">
+<p>From this table, we can see all of the percipitation data by date and day of week. The snow column and day number will be most useful in hunting down December 25th snowfall.</p>
+<div id="7242ffef-6cac-4e22-a542-bc2589eba431" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>weather_df[<span class="st">'year'</span>].value_counts()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="52">
+<div class="cell-output cell-output-display" data-execution_count="6">
 <pre><code>year
 2008    366
 2020    366
@@ -363,10 +358,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 Name: count, dtype: int64</code></pre>
 </div>
 </div>
-<div id="52646ceb-c647-43e1-8eb7-0f82d09e5898" class="cell" data-execution_count="53">
+<div id="52646ceb-c647-43e1-8eb7-0f82d09e5898" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>xmas_filter <span class="op">=</span> weather_df[<span class="st">'day'</span>] <span class="op">==</span> <span class="st">'December 25'</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>weather_df[xmas_filter]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-display" data-execution_count="53">
+<div class="cell-output cell-output-display" data-execution_count="7">
 <div>
 
 
@@ -710,6 +705,7 @@ Name: count, dtype: int64</code></pre>
 </div>
 </div>
 </div>
+<p>This table provides all of the December 25th data from 2005 to 2005 and we can already see that there has been a significant lack ofsnowfall over the years.</p>
 <div id="7ca0cd1b-c60f-4332-8066-b9a0124ee822" class="cell" data-execution_count="54">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>snow_on_xmas <span class="op">=</span> weather_df[xmas_filter][<span class="st">'snow'</span>]<span class="op">&gt;</span><span class="dv">0</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>snow_on_xmas</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -739,14 +735,14 @@ Name: snow, dtype: bool</code></pre>
 </div>
 </div>
 </section>
-</section>
-</section>
-<section id="oh-no" class="level1">
-<h1><em>OH NO!</em></h1>
-<p>Unfortunately, we can see from the data that shockingly there was no snowfall on any Christmas Day from 2005 to 2025. So instead of looking at snowfall on Christmas we can pivot and look at <strong>Boxing Day</strong> (December 26)!</p>
+<section id="an-unexpected-result" class="level3">
+<h3 class="anchored" data-anchor-id="an-unexpected-result">An Unexpected Result</h3>
+<p>After filtering the dataset to only include December 25th from 2005 to 2025 it is evident that not a single Christmas Day recorded snowfall in Philadelphia during this time period. While many people associate Christmas with snow, the historical weather data reflects a very different story.We can determine from these findings that over 21 years, the probability of snowfall on Christmas Day in Philly was 0%.</p>
+<p>So, since Christmas Day itself showed no snowfall, the analysis can be moved to <strong>Boxing Day</strong>(December 26th) to see whether winter weather followed immediately after the holiday instead.</p>
 <p><img src="boxingday.png" width="300/"></p>
-<p>But to answer the orignal questions – 1. <em>Snow has occured 0 times out of 20 on every December 25th from 2005 to 2025.</em> 2. <em>There is a 0% chance of snowfall on December 25th according to the historical data from 2005 to 2025</em></p>
-<hr>
+<p>But to answer the orignal questions, Snow has occured 0 times out of 20 on every December 25th from 2005 to 2025. Additionally, There is a 0% chance of snowfall on December 25th according to the historical data.</p>
+</section>
+</section>
 </section>
 <section id="snow-on-boxing-day-predictions-and-philadelphia-weather" class="level1">
 <h1>Snow on Boxing Day Predictions and Philadelphia Weather</h1>
@@ -754,14 +750,9 @@ Name: snow, dtype: bool</code></pre>
 <ol type="1">
 <li>How many times did snowfall occur from 2005 to 2025 on Boxing Day (December 26)?</li>
 <li>What was the probability of snow fall accoeding to the historical data on Boxing Day from 2005 to 2025?</li>
-<li><code>Bonus!</code> What was the probability of percipitation (rain and/or snow) on Boxing Day from 2005 to 2025?</li>
+<li>What was the probability of percipitation (rain and/or snow) on Boxing Day from 2005 to 2025?</li>
 </ol>
-<p><strong>STEPS</strong></p>
-<ol type="1">
-<li>Filter rows by <code>day</code> column to only show December 26th</li>
-<li>Filter the rows to find the years that had <code>snow</code>and count how many show data</li>
-<li>Calculate the probability of snowfall and/or rain fall occuring on December 26th</li>
-</ol>
+<p>To answer these questions, the steps that must taken are to: 1. Filter rows by <code>day</code> column to only show December 26th 2. Filter the rows to find the years that had <code>snow</code>and count how many show data 3. Calculate the probability of snowfall and/or rain fall occuring on December 26th</p>
 <div id="419b8ea8-c4ca-442d-b0ac-086c190bf243" class="cell" data-execution_count="40">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>boxing_day_filter <span class="op">=</span> weather_df[<span class="st">'day'</span>] <span class="op">==</span> <span class="st">'December 26'</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>boxing_day <span class="op">=</span> weather_df[boxing_day_filter]</span>
@@ -1172,11 +1163,10 @@ Name: snow, dtype: bool</code></pre>
 </div>
 </div>
 </div>
-<p>We have our first answer! - From the data we can see that from the years of 2005 to 2025 it snowed twice. Once in 2010 and once in 2025.</p>
-<section id="fun-fact" class="level4">
-<h4 class="anchored" data-anchor-id="fun-fact">Fun Fact!</h4>
+<p>This shift reveals a much more interesting pattern in weather. Unlike Christmas, Boxing Day did experience snowfall in some years, showing that winter storms may arrive just after the holiday instead of during it.</p>
+<p>Overall, from the years of 2005 to 2025 it has snowed twice on Boxing Day in Philadelphia. Once in 2010 and once in 2025.</p>
+<p>This would reflect a major whether event called the great Boxing Day Blizzard which overtook the Northeast in 2010. Philadelphia recorded 11.6 inches of snow, making it the largest snowfall event in the dataset. This single storm stands out from the rest of the years and highlights how rare but intense winter weather events can shape seasonal data.</p>
 <ul>
-<li><p><em>Upon further research there was a great Boxing Day Blizzard that overtook the Northeast in 2010!</em></p></li>
 <li><p><img src="Dec26_27_2010_NJ_snow.webp" width="200/"></p>
 <ul>
 <li>This picture is from Rutgers University Climate Lab</li>
@@ -1196,7 +1186,7 @@ Name: snow, dtype: bool</code></pre>
 <pre><code>9.523809523809524</code></pre>
 </div>
 </div>
-<p>We now have our second answer! - The probability of seeing snow on boxing day was 9.52%</p>
+<p>On Boxing day, it has been revealed that the probability of seeing snow was 9.52%. In hindsight, this seems like a relatively low number for such a cold climate.</p>
 <div id="909392d3-c789-4ce2-9007-aac56b59fcea" class="cell" data-execution_count="44">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>boxing_day_rain <span class="op">=</span> boxing_day.query(<span class="st">'rain &gt; 0'</span>)</span>
 <span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>boxing_day_rain</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1349,7 +1339,6 @@ Name: snow, dtype: bool</code></pre>
 </div>
 </div>
 <p>Finally for the last part of our analysis we know that… - The probability of seeing percipitation on boxing day from 2005 to 2025 was 33.3%</p>
-</section>
 <section id="now-lets-visualize-it" class="level3">
 <h3 class="anchored" data-anchor-id="now-lets-visualize-it">Now let’s visualize it!</h3>
 <div id="779da170-f482-49d1-9b79-187023e03423" class="cell" data-execution_count="47">
@@ -1368,6 +1357,11 @@ Name: snow, dtype: bool</code></pre>
 </div>
 </div>
 </div>
+<p>The visualization shows that most Boxing Days experienced little to no precipitation. However, a few years stand out such as 2010, where snowfall exceeded every other recorded date in the dataset.</p>
+</section>
+<section id="conclusion" class="level3">
+<h3 class="anchored" data-anchor-id="conclusion">Conclusion</h3>
+<p>Overall, the data challenges the popular image of snowfall on Christmas day. As discovered in upon analyzing the data, Between 2005 and 2025, snowfall never occurred on Christmas Day and only appeared twice on Boxing Day. So, though snow is associated with the holiday season, the historical weather data reveals that a true “white Christmas” in Philadelphia is actually very rare. Ultimately, major winter weather events are more likely to happen shortly after the holiday rather than on Christmas.</p>
 
 
 </section>
