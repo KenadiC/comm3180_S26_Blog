@@ -2,11 +2,14 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/008_post_DOW5/10b_DOW5/03_openphilly_shootings_data_analysis.html",
+      "/posts/008_post_DOW5/10b_DOW5/02_More_plotting_in_Python.html",
+      "/posts/008_post_DOW5/10b_DOW5/01_Contextualizing_numbers_and_data.html",
+      "/posts/009_post_DOW6/DOW6.html",
       "/posts/007_post_DOW4/08_DOW4_and_Geolocated_data_with_GeoPandas/DOW4.html",
       "/posts/006_post_DOW3/07a_DOW3/DOW3_FreeSki.html",
       "/posts/005_post_Big5/06b_DOW2_and_Asking_Questions/DOW2-Copy1.html",
       "/posts/004_post_Boxingday/Boxingdaypost.html",
-      "/posts/003_post_DOW1/DOW1.html",
       "/posts/002_post_title/kenadi_recipe_post.html"
     ]
   }

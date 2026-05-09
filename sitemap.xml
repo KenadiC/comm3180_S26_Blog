@@ -1,35 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://KenadiC.github.io/comm3180_S26_Blog/about.html</loc>
-    <lastmod>2026-03-14T03:30:19.511Z</lastmod>
-  </url>
-  <url>
-    <loc>https://KenadiC.github.io/comm3180_S26_Blog/posts/003_post_DOW1/DOW1.html</loc>
-    <lastmod>2026-03-14T03:30:19.513Z</lastmod>
-  </url>
-  <url>
-    <loc>https://KenadiC.github.io/comm3180_S26_Blog/posts/005_post_Big5/06b_DOW2_and_Asking_Questions/DOW2-Copy1.html</loc>
-    <lastmod>2026-03-14T03:30:19.517Z</lastmod>
-  </url>
-  <url>
-    <loc>https://KenadiC.github.io/comm3180_S26_Blog/posts/006_post_DOW3/07a_DOW3/DOW3_FreeSki.html</loc>
-    <lastmod>2026-03-14T03:30:19.518Z</lastmod>
-  </url>
-  <url>
     <loc>https://KenadiC.github.io/comm3180_S26_Blog/index.html</loc>
-    <lastmod>2026-03-14T03:30:19.511Z</lastmod>
+    <lastmod>2026-05-09T05:07:51.203Z</lastmod>
   </url>
   <url>
     <loc>https://KenadiC.github.io/comm3180_S26_Blog/posts/007_post_DOW4/08_DOW4_and_Geolocated_data_with_GeoPandas/DOW4.html</loc>
-    <lastmod>2026-03-14T03:30:19.520Z</lastmod>
+    <lastmod>2026-05-09T05:07:51.211Z</lastmod>
   </url>
   <url>
-    <loc>https://KenadiC.github.io/comm3180_S26_Blog/posts/002_post_title/kenadi_recipe_post.html</loc>
-    <lastmod>2026-03-14T03:30:19.513Z</lastmod>
+    <loc>https://KenadiC.github.io/comm3180_S26_Blog/posts/005_post_Big5/06b_DOW2_and_Asking_Questions/DOW2-Copy1.html</loc>
+    <lastmod>2026-05-09T05:07:51.209Z</lastmod>
+  </url>
+  <url>
+    <loc>https://KenadiC.github.io/comm3180_S26_Blog/posts/008_post_DOW5/10b_DOW5/02_More_plotting_in_Python.html</loc>
+    <lastmod>2026-05-09T05:07:51.212Z</lastmod>
   </url>
   <url>
     <loc>https://KenadiC.github.io/comm3180_S26_Blog/posts/004_post_Boxingday/Boxingdaypost.html</loc>
-    <lastmod>2026-03-14T03:30:19.513Z</lastmod>
+    <lastmod>2026-05-09T05:07:51.205Z</lastmod>
+  </url>
+  <url>
+    <loc>https://KenadiC.github.io/comm3180_S26_Blog/posts/009_post_DOW6/DOW6.html</loc>
+    <lastmod>2026-05-09T05:07:51.502Z</lastmod>
+  </url>
+  <url>
+    <loc>https://KenadiC.github.io/comm3180_S26_Blog/posts/006_post_DOW3/07a_DOW3/DOW3_FreeSki.html</loc>
+    <lastmod>2026-05-09T05:07:51.210Z</lastmod>
+  </url>
+  <url>
+    <loc>https://KenadiC.github.io/comm3180_S26_Blog/posts/008_post_DOW5/10b_DOW5/03_openphilly_shootings_data_analysis.html</loc>
+    <lastmod>2026-05-09T05:07:51.215Z</lastmod>
+  </url>
+  <url>
+    <loc>https://KenadiC.github.io/comm3180_S26_Blog/posts/008_post_DOW5/10b_DOW5/01_Contextualizing_numbers_and_data.html</loc>
+    <lastmod>2026-05-09T05:07:51.212Z</lastmod>
+  </url>
+  <url>
+    <loc>https://KenadiC.github.io/comm3180_S26_Blog/posts/002_post_title/kenadi_recipe_post.html</loc>
+    <lastmod>2026-05-09T05:07:51.205Z</lastmod>
+  </url>
+  <url>
+    <loc>https://KenadiC.github.io/comm3180_S26_Blog/about.html</loc>
+    <lastmod>2026-05-09T05:07:51.203Z</lastmod>
   </url>
 </urlset>

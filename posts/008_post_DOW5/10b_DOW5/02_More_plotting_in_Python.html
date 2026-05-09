@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>My Data Stories – Kenadi’s Data Stories</title>
+<title>Plotting options in Python (Part 2) – Kenadi’s Data Stories</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,28 +23,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-29cf27bba7a4f7ff279343c462d49d06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-7f8f88aac4f3542376d5c11b86a4c14d.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-29cf27bba7a4f7ff279343c462d49d06.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -72,77 +105,19 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../../styles.css">
 </head>
 
-<body class="nav-fixed quarto-light">
+<body class="nav-fixed fullcontent quarto-light">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../../index.html">
     <span class="navbar-title">Kenadi’s Data Stories</span>
     </a>
   </div>
@@ -153,7 +128,7 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.html"> 
+    <a class="nav-link" href="../../../about.html"> 
 <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item compact">
@@ -171,13 +146,13 @@ window.Quarto = {
 <!-- content -->
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-page-left">
-      <h1 class="title">My Data Stories</h1>
+    <div class="quarto-title column-body">
+      <h1 class="title">Plotting options in Python (Part 2)</h1>
                       </div>
   </div>
     
   
-  <div class="quarto-title-meta column-page-left">
+  <div class="quarto-title-meta">
 
       
     
@@ -185,285 +160,108 @@ window.Quarto = {
     </div>
     
   
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(9)</span></div><div class="category" data-category="QUk=">AI <span class="quarto-category-count">(1)</span></div><div class="category" data-category="Q3Jhc2glMjBEYXRh">Crash Data <span class="quarto-category-count">(1)</span></div><div class="category" data-category="RE9X">DOW <span class="quarto-category-count">(5)</span></div><div class="category" data-category="RXZlcnlkYXklMjBUYXNrcw==">Everyday Tasks <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TGVhcm5pbmc=">Learning <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TXVzaWMlMjBEYXRh">Music Data <span class="quarto-category-count">(1)</span></div><div class="category" data-category="UGVyc29uYWxpdHklMjBUZXN0">Personality Test <span class="quarto-category-count">(1)</span></div><div class="category" data-category="d2VhdGhlcg==">weather <span class="quarto-category-count">(1)</span></div><div class="category" data-category="V2ludGVyJTIwT2x5bXBpY3M=">Winter Olympics <span class="quarto-category-count">(1)</span></div></div></div>
+    
 <!-- main -->
-<main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
+<main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
 
-
-
-
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-listing-file-modified-sort="1778303271215" data-listing-reading-time-sort="5" data-listing-word-count-sort="866">
-<div class="thumbnail"><a href="./posts/008_post_DOW5/10b_DOW5/03_openphilly_shootings_data_analysis.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' src="posts/008_post_DOW5/10b_DOW5/img/shootings_heatmap.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/008_post_DOW5/10b_DOW5/03_openphilly_shootings_data_analysis.html" class="no-external">COMM3180 Spring 2026 - <em>Stories from Data</em></a>
-</h3>
-<div class="delink listing-description"><a href="./posts/008_post_DOW5/10b_DOW5/03_openphilly_shootings_data_analysis.html" class="no-external">
-Data is available from opendataphily.org
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/008_post_DOW5/10b_DOW5/03_openphilly_shootings_data_analysis.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-listing-file-modified-sort="1778303271212" data-listing-reading-time-sort="1" data-listing-word-count-sort="26">
-<div class="thumbnail"><a href="./posts/008_post_DOW5/10b_DOW5/02_More_plotting_in_Python.html" class="no-external">
-
-<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/008_post_DOW5/10b_DOW5/02_More_plotting_in_Python.html" class="no-external">Plotting options in Python (Part 2)</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/008_post_DOW5/10b_DOW5/02_More_plotting_in_Python.html" class="no-external">
-
-
+<section id="comm3180-spring-2026---stories-from-data" class="level2">
+<h2 class="anchored" data-anchor-id="comm3180-spring-2026---stories-from-data">COMM3180 Spring 2026 - <em>Stories from Data</em></h2>
 <section id="instructor-matt-odonnell-mbodasc.upenn.edu" class="level3">
-
+<h3 class="anchored" data-anchor-id="instructor-matt-odonnell-mbodasc.upenn.edu">Instructor: Matt O’Donnell (mbod@asc.upenn.edu)</h3>
 <hr>
 </section>
+</section>
+<section id="setup" class="level2">
+<h2 class="anchored" data-anchor-id="setup">Setup</h2>
+<div id="d6925186-856c-4e65-8f39-72177ab29f3b" class="cell" data-tags="[]">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> plotly.express <span class="im">as</span> px</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> warnings</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>warnings.filterwarnings(<span class="st">'ignore'</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> IPython.display <span class="im">import</span> IFrame</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="load-some-data" class="level2">
+<h2 class="anchored" data-anchor-id="load-some-data">Load some data</h2>
+<div id="f25b3a48-00ab-4059-b95c-b9918cf0e480" class="cell" data-tags="[]">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>measles_df <span class="op">=</span> pd.read_csv(<span class="st">'data/measlescasesbycountrybymonth.csv'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>measles_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="28f94f32-194b-4d7c-9535-e357e38d38ea" class="cell" data-tags="[]">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>id_cols <span class="op">=</span>  measles_df.columns[<span class="dv">0</span>:<span class="dv">4</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>var_cols <span class="op">=</span> measles_df.columns[<span class="dv">4</span>:]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="774bf8a1-8464-4948-ba1b-50963de6f70a" class="cell" data-tags="[]">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>measles_long_df <span class="op">=</span> pd.melt(measles_df,</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>                          id_vars <span class="op">=</span> id_cols,</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>                          value_vars <span class="op">=</span> var_cols,</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>                          var_name <span class="op">=</span> <span class="st">'month'</span>,</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>                          value_name <span class="op">=</span> <span class="st">'measles_cases'</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>                         </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="e2709ae9-fbeb-40cf-a294-2fd772944851" class="cell" data-tags="[]">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>measles_long_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="36c1d746-81b4-4868-8172-52ded7d82b1b" class="cell" data-tags="[]">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>cases_by_region_and_year <span class="op">=</span> measles_long_df.groupby([<span class="st">'Region'</span>, <span class="st">'Year'</span>])[<span class="st">'measles_cases'</span>].<span class="bu">sum</span>()</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>cases_by_region_and_year</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="e81f5ecd-5101-4406-a3c6-a08e19f40ddf" class="cell" data-tags="[]">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>cases_by_region_and_year.unstack(level<span class="op">=</span><span class="dv">0</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="c4e094e2-2d47-449b-a669-cef45dcd84f4" class="cell" data-tags="[]">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>cases_by_region_and_year.unstack(level<span class="op">=</span><span class="dv">0</span>).plot(kind<span class="op">=</span><span class="st">'bar'</span>, stacked<span class="op">=</span><span class="va">True</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="plotly-express" class="level2">
+<h2 class="anchored" data-anchor-id="plotly-express">Plotly Express</h2>
+<ul>
+<li>https://plotly.com/python/bar-charts/</li>
+</ul>
+<section id="long-form-data-to-stacked-bar-chart" class="level3">
+<h3 class="anchored" data-anchor-id="long-form-data-to-stacked-bar-chart">Long form data to stacked bar chart</h3>
+<div id="b67b118e-487d-46ad-b4a8-8ff407a3375a" class="cell" data-tags="[]">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>cases_region_year_df<span class="op">=</span>cases_by_region_and_year.reset_index()</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>cases_region_year_df.head()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="8a43e848-fd54-4975-a45b-2d064f1e737e" class="cell" data-tags="[]">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>px.bar(cases_region_year_df,</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>       x<span class="op">=</span><span class="st">'Year'</span>, </span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>       y<span class="op">=</span><span class="st">'measles_cases'</span>, </span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>       color<span class="op">=</span><span class="st">'Region'</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="wide-form-data-to-stacked-bar-chart" class="level3">
+<h3 class="anchored" data-anchor-id="wide-form-data-to-stacked-bar-chart">Wide form data to stacked bar chart</h3>
+<div id="ad6935e1-de05-43ff-9709-1ee2d6e8a2a2" class="cell" data-tags="[]">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>cases_region_year_wide_df <span class="op">=</span> cases_by_region_and_year.unstack(level<span class="op">=</span><span class="dv">0</span>).reset_index()</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>cases_region_year_wide_df</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="ff9e5579-cd95-40fc-b461-15c53be4ad6c" class="cell" data-tags="[]">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>cases_region_year_wide_df.columns[<span class="dv">1</span>:]</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<div id="5767a4f7-cbb5-42fd-9009-131ddbc41f86" class="cell" data-tags="[]">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>px.bar(cases_region_year_wide_df,</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>       x<span class="op">=</span><span class="st">'Year'</span>,</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>       y<span class="op">=</span>cases_region_year_wide_df.columns[<span class="dv">1</span>:])</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
 
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/008_post_DOW5/10b_DOW5/02_More_plotting_in_Python.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-listing-file-modified-sort="1778303271212" data-listing-reading-time-sort="1" data-listing-word-count-sort="91">
-<div class="thumbnail"><a href="./posts/008_post_DOW5/10b_DOW5/01_Contextualizing_numbers_and_data.html" class="no-external">
 
-<p class="card-img-top"><img loading='lazy' src="posts/008_post_DOW5/10b_DOW5/img/chatgpt_just_got_shot.png"  class="thumbnail-image card-img"/></p>
+</section>
+</section>
 
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/008_post_DOW5/10b_DOW5/01_Contextualizing_numbers_and_data.html" class="no-external">Contextualizing numbers and data</a>
-</h3>
-<div class="delink listing-description"><a href="./posts/008_post_DOW5/10b_DOW5/01_Contextualizing_numbers_and_data.html" class="no-external">
-0.33%
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/008_post_DOW5/10b_DOW5/01_Contextualizing_numbers_and_data.html" class="no-external">
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="3" data-categories="RE9XJTJDTXVzaWMlMjBEYXRh" data-listing-date-sort="1778198400000" data-listing-file-modified-sort="1778303271502" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="634">
-<div class="thumbnail"><a href="./posts/009_post_DOW6/DOW6.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' src="posts/009_post_DOW6/img/enternalsunshinetour.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/009_post_DOW6/DOW6.html" class="no-external">Google Trends vs Spotify: Ariana Grande’s Tour and Streaming Popularity</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('RE9X'); return false;">DOW</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TXVzaWMlMjBEYXRh'); return false;">Music Data</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/009_post_DOW6/DOW6.html" class="no-external">
-As Ariana Grande continues to be one of the main faces in recent pop culture, she has maintained a cult following across multiple platforms. Specifically, with the massive…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/009_post_DOW6/DOW6.html" class="no-external">
-<div class="listing-date">
-May 8, 2026
-</div>
-<div class="listing-author">
-Kenadi
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="4" data-categories="RE9XJTJDQ3Jhc2glMjBEYXRh" data-listing-date-sort="1773360000000" data-listing-file-modified-sort="1778303271211" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="768">
-<div class="thumbnail"><a href="./posts/007_post_DOW4/08_DOW4_and_Geolocated_data_with_GeoPandas/DOW4.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' src="posts/007_post_DOW4/08_DOW4_and_Geolocated_data_with_GeoPandas/img/youngdriverphoto.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/007_post_DOW4/08_DOW4_and_Geolocated_data_with_GeoPandas/DOW4.html" class="no-external">Exploring Pennsylvania Crash Data: Young Drivers</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('RE9X'); return false;">DOW</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('Q3Jhc2glMjBEYXRh'); return false;">Crash Data</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/007_post_DOW4/08_DOW4_and_Geolocated_data_with_GeoPandas/DOW4.html" class="no-external">
-According to the Center for Disease Control (CDC), young drivers (16-19) have the highest risk of being involved in a vehicle crash than any other age group. In fact, it is…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/007_post_DOW4/08_DOW4_and_Geolocated_data_with_GeoPandas/DOW4.html" class="no-external">
-<div class="listing-date">
-Mar 13, 2026
-</div>
-<div class="listing-author">
-Kenadi
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="5" data-categories="RE9XJTJDV2ludGVyJTIwT2x5bXBpY3M=" data-listing-date-sort="1771718400000" data-listing-file-modified-sort="1778303271210" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="707">
-<div class="thumbnail"><a href="./posts/006_post_DOW3/07a_DOW3/DOW3_FreeSki.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' src="posts/006_post_DOW3/07a_DOW3/img/eileengu.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/006_post_DOW3/07a_DOW3/DOW3_FreeSki.html" class="no-external">Exploring Winter Olympics Data: Women’s Free Ski</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('RE9X'); return false;">DOW</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('V2ludGVyJTIwT2x5bXBpY3M='); return false;">Winter Olympics</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/006_post_DOW3/07a_DOW3/DOW3_FreeSki.html" class="no-external">
-Women’s freestyle skiing has become a highly anticipated discipline in the world of Olympic sports and with the ongoing 2026 Winter Olympics we are reminded of the stand-out…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/006_post_DOW3/07a_DOW3/DOW3_FreeSki.html" class="no-external">
-<div class="listing-date">
-Feb 22, 2026
-</div>
-<div class="listing-author">
-Kenadi
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="6" data-categories="RE9XJTJDUGVyc29uYWxpdHklMjBUZXN0" data-listing-date-sort="1770940800000" data-listing-file-modified-sort="1778303271209" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1089">
-<div class="thumbnail"><a href="./posts/005_post_Big5/06b_DOW2_and_Asking_Questions/DOW2-Copy1.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' src="posts/005_post_Big5/06b_DOW2_and_Asking_Questions/AgreevsExtra.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/005_post_Big5/06b_DOW2_and_Asking_Questions/DOW2-Copy1.html" class="no-external">Exploring Big 5 Personality test data</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('RE9X'); return false;">DOW</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('UGVyc29uYWxpdHklMjBUZXN0'); return false;">Personality Test</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/005_post_Big5/06b_DOW2_and_Asking_Questions/DOW2-Copy1.html" class="no-external">
-This analysis explores whether respondents are more likely to score higher in agreeableness than in extraversion using data from the Big Five Personality test. Comparing…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/005_post_Big5/06b_DOW2_and_Asking_Questions/DOW2-Copy1.html" class="no-external">
-<div class="listing-date">
-Feb 13, 2026
-</div>
-<div class="listing-author">
-Kenadi
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="7" data-categories="RE9XJTJDd2VhdGhlcg==" data-listing-date-sort="1770508800000" data-listing-file-modified-sort="1778303271205" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="418">
-<div class="thumbnail"><a href="./posts/004_post_Boxingday/Boxingdaypost.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' src="posts/004_post_Boxingday/Whitechristmas.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/004_post_Boxingday/Boxingdaypost.html" class="no-external">White Christmas Predictions and Philadelphia Weather</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('RE9X'); return false;">DOW</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('d2VhdGhlcg=='); return false;">weather</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/004_post_Boxingday/Boxingdaypost.html" class="no-external">
-<strong>STEPS</strong> 1. Filter rows by <code>day</code> column to only show December 25th 2. Filter the rows to find the years that had <code>snow</code> 3. Calculate the difference between days that had no snow…
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/004_post_Boxingday/Boxingdaypost.html" class="no-external">
-<div class="listing-date">
-Feb 8, 2026
-</div>
-<div class="listing-author">
-Kenadi
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="8" data-categories="QUklMkNMZWFybmluZyUyQ0V2ZXJ5ZGF5JTIwVGFza3M=" data-listing-date-sort="1737590400000" data-listing-file-modified-sort="1778303271205" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="31">
-<div class="thumbnail"><a href="./posts/002_post_title/kenadi_recipe_post.html" class="no-external">
-
-<p class="card-img-top"><img loading='lazy' src="posts/002_post_title/AIfruitmeme.png"  class="thumbnail-image card-img"/></p>
-
-</a></div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/002_post_title/kenadi_recipe_post.html" class="no-external">Planning recipes and groceries</a>
-</h3>
-<div class="listing-categories">
-
-<div class="listing-category" onclick="window.quartoListingCategory('QUk='); return false;">AI</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('TGVhcm5pbmc='); return false;">Learning</div>
-
-<div class="listing-category" onclick="window.quartoListingCategory('RXZlcnlkYXklMjBUYXNrcw=='); return false;">Everyday Tasks</div>
-
-</div>
-<div class="delink listing-description"><a href="./posts/002_post_title/kenadi_recipe_post.html" class="no-external">
-<p>Can AI help eliminate the burden of remembering grocery lists?</p>
-</a></div>
-</div>
-<div class="metadata">
-<a href="./posts/002_post_title/kenadi_recipe_post.html" class="no-external">
-<div class="listing-date">
-Jan 23, 2025
-</div>
-<div class="listing-author">
-Kenadi
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">No matching items</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
   window.document.addEventListener("DOMContentLoaded", function (event) {
     const icon = "";
